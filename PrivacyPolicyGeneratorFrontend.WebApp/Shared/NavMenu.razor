@@ -1,0 +1,65 @@
+﻿@inject IStringLocalizer<Resource> _localizer
+
+<div class=" fixed-top" Style="width: 100%; position: fixed;">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-toggler">
+                    <buttton data-toggle="open-navbar1">
+
+                        <RadzenMenu data-toggle="open-navbar1">
+                            <RadzenMenuItem Text="@_localizer["Generate"]">
+                                <RadzenMenuItem Class="p-1" Text="@_localizer["PrivacyPolicy"]" Icon="https" Path="/privacy-policy" />
+                                <RadzenMenuItem Class="p-1" Text="@_localizer["Imprint"]" Icon="label_outline" Path="/imprint" />
+                                <RadzenMenuItem Class="p-1" Text="@_localizer["TermsAndCondition"]" Icon="assignment" Path="/terms-and-conditions" />
+                            </RadzenMenuItem>
+                            <RadzenMenuItem Text="@_selectedLang"  Icon="language">
+                                <RadzenMenuItem Click="OnEnglishClicked" Text="EN"></RadzenMenuItem>
+                                <RadzenMenuItem Click="OnAmharicClicked" Text="አማ"></RadzenMenuItem>
+                            </RadzenMenuItem>
+                        </RadzenMenu>
+                    </buttton>
+                </div>
+                <a href="#" class="navbar-brand" style="text-decoration: none; font-weight: bold;">
+                    <img style="width: 35%; height: 35%" src="./favicon.ico" />
+                    @*<RadzenText class="navbar-brand" TextStyle="TextStyle.DisplayH6">@_localizer["Adey"]-<span>@_localizer["Generator"]</span></RadzenText>*@
+                </a>
+            </div>
+
+            <div class="navbar-menu" id="open-navbar1">
+                <ul class="navbar-nav">
+                    <li style="font-weight: bold;">
+                        <a href="#">@_localizer["Home"]</a>
+                    </li>
+                    <li style="font-weight: bold;">
+                        <RadzenMenu Click="OnParentClicked">
+                            <RadzenMenuItem Text="@_localizer["Generate"]">
+                                <RadzenMenuItem Class="p-1" Text="@_localizer["PrivacyPolicy"]" Icon="https" Path="/privacy-policy" />
+                                <RadzenMenuItem Class="p-1" Text="@_localizer["Imprint"]" Icon="label_outline" Path="/imprint" />
+                                <RadzenMenuItem Class="p-1" Text="@_localizer["TermsAndCondition"]" Icon="assignment" Path="/terms-and-conditions" />
+                            </RadzenMenuItem>
+                        </RadzenMenu>
+                    </li>
+                    <li style="font-weight: bold;">
+                        <RadzenMenu Click="OnParentClicked">
+                            <RadzenMenuItem Text="@_selectedLang" Icon="language">
+                                <RadzenMenuItem Click="OnEnglishClicked" Text="EN"></RadzenMenuItem>
+                                <RadzenMenuItem Click="OnAmharicClicked" Text="አማ"></RadzenMenuItem>
+                            </RadzenMenuItem>
+                        </RadzenMenu>
+                    </li>
+                    <li style="font-weight: bold;">
+                        <RadzenButton Click="OnAboutUsClicked" style="width: 160px" Text="@_localizer["AboutUs"]" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+@code{
+    void OnParentClicked(MenuItemEventArgs args)
+    {
+        Console.WriteLine($"{args.Text} clicked from parent");
+    }
+}

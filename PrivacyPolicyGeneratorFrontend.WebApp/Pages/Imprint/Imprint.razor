@@ -1,0 +1,178 @@
+﻿@page "/imprint"
+@page "/imprint/payment/{Payment}"
+
+@using PrivacyPolicyGeneratorFrontend.WebApp.Pages.Imprint.Components
+@using WebService.Enums
+@inject IStringLocalizer<Resource> _localizer
+
+
+<PageTitle>@_localizer["Imprint"] @_localizer["Generate"]</PageTitle>
+
+@if (!_generated)
+{
+    <div class="cont">
+        <div class="row mb-2">
+            <div class="col-sm-12 col-md-6">
+                <h4>
+                    @_localizer["I-H1"] (<span>*</span>)
+                </h4>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <RadzenCard class="rz-shadow-1 rz-border-radius-4">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                        @_localizer["SelectLanguage"] <span>*</span>
+                    </RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                    Data=@_languages TextProperty="Languages" Change=@(args => OnLanguageChanged(args, "langauge")) />
+                </RadzenCard>
+            </div>
+        </div>
+        <div class="card rz-shadow-1 rz-border-radius-4" style="min-height: 90vh">
+            <h5>
+                @_localizer["I-H2"]
+            </h5>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <RadzenCard class="row m-2">
+
+                        <div class="col-md-6 col-lg-6 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ1"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.CompanyName" Placeholder="@_localizer["IQ1"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-6 col-lg-6 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                    @_localizer["IQ2"] <span>*</span>
+                                </RadzenText>
+                                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                Data=@_companyTypes TextProperty="CompanyType" Change=@(args => OnCompanyTypeChanged(args, "company type")) />
+                            </RadzenCard>
+                        </div>
+                    </RadzenCard>
+
+                    <RadzenCard class="row m-2">
+                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                            @_localizer["IQ3"] <span>*</span>
+                        </RadzenText>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                    @_localizer["PPQ8"] <span>*</span>
+                                </RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.CompanyAddress.Country" Placeholder="@_localizer["PPQ8"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ9"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.CompanyAddress.Region" Placeholder="@_localizer["PPQ9"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-2 col-lg-2 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                    @_localizer["PPQ10"] <span>*</span>
+                                </RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.CompanyAddress.Subcity" Placeholder="@_localizer["PPQ10"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-2 col-lg-2 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ11"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.CompanyAddress.Woreda" Placeholder="@_localizer["PPQ11"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-2 col-lg-2 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                    @_localizer["PPQ12"] <span>*</span>
+                                </RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.CompanyAddress.HouseNumber" Placeholder="@_localizer["PPQ12"]" />
+                            </RadzenCard>
+                        </div>
+                    </RadzenCard>
+                    <RadzenCard class="row m-2">
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ4"]</RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.AdditionalAddress" Placeholder="@_localizer["IQ4"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PhoneNumber"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.PhoneNumber" Placeholder="@_localizer["PhoneNumber"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["Email"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.Email" Placeholder="@_localizer["Email"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ5"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.BusinessRegisterNumber" Placeholder="@_localizer["IQ5"]" />
+                            </RadzenCard>
+                        </div>
+                    </RadzenCard>
+                    <RadzenCard class="row m-2">
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ6"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.VATID" Placeholder="@_localizer["IQ6"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ7"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.TaxNumber" Placeholder="@_localizer["IQ7"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ8"] <span>*</span></RadzenText>
+                                <RadzenTextBox Class="w-100" @bind-Value="_IQM.Representer" Placeholder="@_localizer["CompanyRepresenter"]" />
+                            </RadzenCard>
+                        </div>
+                        <div class="col-md-3 col-lg-3 p-1">
+                            <RadzenCard>
+                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["IQ9"]</RadzenText>
+                                <RadzenCheckBox Name="Yes" TValue="bool" Value="_IQM.OtherWebsiteLink" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "OtherWebsiteLinkYes")) />
+                                <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                <br />
+                                <RadzenCheckBox Name="No" Value="!_IQM.OtherWebsiteLink" Change=@(args => OnCheckBoxChanged(args, "OtherWebsiteLinkNo")) TValue="bool" Class="mt-2 ml-3" />
+                                <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                            </RadzenCard>
+                        </div>
+                    </RadzenCard>
+                    <div class="mt-1">
+                        <h5>@_localizer["P-PH3"]</h5>
+
+                        <div class="w-100">
+                            <RadzenButton Class="w-100" Icon="check_circle" BusyText="@_localizer["Generating"]" IsBusy=@busy Click=@OnBusyClick Text="@_localizer["Generate"]"
+                                          Disabled="@(_lang == null || _IQM.CompanyName == null || _IQM.CompanyType == null || _IQM.CompanyAddress.Country == null || _IQM.CompanyAddress.Region == null || _IQM.CompanyAddress.Subcity == null || _IQM.CompanyAddress.Woreda == null
+                                      || _IQM.CompanyAddress.HouseNumber == null || _IQM.PhoneNumber == null || _IQM.Email == null || _IQM.BusinessRegisterNumber == null || _IQM.VATID == null || _IQM.TaxNumber == null || _IQM.Representer == null)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    if (_lang == "English")
+    {
+        <GeneratedImprint OnChangeAnswer="OnChangeAnswer" _IQM="_IQM" />
+    }
+    else
+    {
+        <GeneratedImprintAm OnChangeAnswer="OnChangeAnswer" _IQM="_IQM" />
+    }
+}

@@ -1,0 +1,57 @@
+﻿@inject IStringLocalizer<Resource> _localizer
+
+<div class="cont page-footer" Style="width: 100%;">
+    <hr class="mb-4" />
+    <h2>@_localizer["Adey"]-<span style="color: #1151F3;">@_localizer["Generator"]</span></h2>
+    <br />
+    <div class="d-flex row">
+        <div class="col-md-3 p-2">
+            <h6>@_localizer["Email"]</h6>
+            <a style="text-decoration: none;" href="mailto:info@adey-generator.de"><h5>info@adey-generator.de</h5></a>
+        </div>
+        <div class="col-md-3 p-2">
+            <h6>@_localizer["Office"]</h6>
+            <h5>
+                @_localizer["Office1"]
+            </h5>
+            <h5>
+                @_localizer["Office2"]
+            </h5>
+            <h5>
+                @_localizer["Office3"]
+            </h5>
+        </div>
+        <div class="col-md-3 ml-auto p-2">
+            <a href="https://adey-meselesh.de/" style="text-decoration: none;">
+                <RadzenButton style="width: 150px;" Text="@_localizer["AboutUs"]" />
+            </a>
+        </div>
+    </div>
+    <hr />
+    <div class="d-flex">
+        <div class="mr-auto p-2">
+            <h6>@_localizer["Copyright"] &copy; @DateTime.UtcNow.Year. @_localizer["AllRightsReserved"] </h6>
+        </div>
+        <div class="p-2">
+            <a href="#" style="text-decoration: none;">
+                <h5>@_localizer["Homepage"]</h5>
+            </a>
+        </div>
+        <div class="p-2">
+            <a href="https://adey-meselesh.de/kontakt" style="text-decoration: none;">
+                <h5>@_localizer["Contact"]</h5>
+            </a>
+        </div>
+        <div class="p-2">
+            <a href="https://adey-meselesh.de/datenschutz" style="text-decoration: none;">
+                <h6>@_localizer["PrivacyPolicy"]</h6>
+            </a>
+        </div>
+
+        <div class="p-2">
+            <a href="https://adey-meselesh.de/impressum" style="text-decoration: none;">
+                <h6>@_localizer["Imprint"]</h6>
+            </a>
+        </div>
+    </div>
+</div>

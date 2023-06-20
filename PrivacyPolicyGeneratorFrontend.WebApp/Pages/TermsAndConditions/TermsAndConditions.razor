@@ -1,0 +1,429 @@
+﻿@page "/terms-and-conditions"
+@page "/terms-and-conditions/payment/{Payment}"
+
+@using Radzen.Blazor
+@using PrivacyPolicyGeneratorFrontend.WebApp.Pages.TermsAndConditions.Components
+@inject IStringLocalizer<Resource> _localizer
+
+<PageTitle>@_localizer["Generate"] @_localizer["TermsAndConditions"]</PageTitle>
+
+
+@if (!_generated)
+{
+    <div class="cont">
+        <div class="row mb-2">
+            <div class="col-sm-12 col-md-6">
+                <h4>
+                    @_localizer["T-CH1"] (<span>*</span>)
+                </h4>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <RadzenCard class="rz-shadow-1 rz-border-radius-4">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                        @_localizer["SelectLanguage"] <span>*</span>
+                    </RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                    Data=@_languages TextProperty="Languages" Change=@(args => OnLanguageChanged(args, "langauge")) />
+                </RadzenCard>
+            </div>
+        </div>
+        <div class="card rz-shadow-1 rz-border-radius-4" style="min-height: 90vh">
+            <h5>
+                @_localizer["T-CH2"]
+            </h5>
+            <RadzenSteps @bind-SelectedIndex=@selectedIndex Change=@OnChange>
+                <Steps>
+                    <RadzenStepsItem Text="@_localizer["T-CStep1"]">
+                        <RadzenCard>
+                            <div class="container-fluid">
+
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ1"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_platform TextProperty="Platform" Change=@(args => OnPlatformChanged(args, "platform")) />
+                                        </RadzenCard>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ2"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_operator TextProperty="OperatorType" Change=@(args => OnOperatorTypeChanged(args, "company type")) />
+                                        </RadzenCard>
+                                    </div>
+                                    @if (_TCQM.OperatorType == "Company")
+                                    {
+                                        <div class="col-md-4 col-lg-4 pb-2">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["TCQ3"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                                Data=@_companyTypes TextProperty="CompanyType" Change=@(args => OnCompanyTypeChanged(args, "company type")) />
+                                            </RadzenCard>
+                                        </div>
+                                    }
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ4"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenTextBox Class="w-100" @bind-Value="_TCQM.BusinessName" Placeholder="@_localizer["TCQ4"]" />
+                                        </RadzenCard>
+                                    </div>
+                                    @if (_TCQM.Platform == "Website" || _TCQM.Platform == "Both")
+                                    {
+                                        <div class="col-md-4 col-lg-4 pb-2">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["TCQ5"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.WebsiteURL" Placeholder="@_localizer["TCQ5"]" />
+                                            </RadzenCard>
+                                        </div>
+
+                                    }
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ6"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenTextBox Class="w-100" @bind-Value="_TCQM.WebsiteName" Placeholder="@_localizer["TCQ6"]" />
+                                        </RadzenCard>
+                                    </div>
+
+                                    <RadzenCard class="row m-2">
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                            @_localizer["TCQ7"] <span>*</span>
+                                        </RadzenText>
+                                        <div class="col-md-3 col-lg-3 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ8"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.Address.Country" Placeholder="@_localizer["PPQ8"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ9"] <span>*</span></RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.Address.Region" Placeholder="@_localizer["PPQ9"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-2 col-lg-2 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ10"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.Address.Subcity" Placeholder="@_localizer["PPQ10"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-2 col-lg-2 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ11"] <span>*</span></RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.Address.Woreda" Placeholder="@_localizer["PPQ11"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-2 col-lg-2 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ12"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.Address.HouseNumber" Placeholder="@_localizer["PPQ12"]" />
+                                            </RadzenCard>
+                                        </div>
+                                    </RadzenCard>
+                                </div>
+                            </div>
+                        </RadzenCard>
+                    </RadzenStepsItem>
+                    <RadzenStepsItem Text="@_localizer["T-CStep2"]" Disabled="@(_TCQM.Platform == null || _TCQM.OperatorType == null || _TCQM.WebsiteName == null || _TCQM.BusinessName == null ||
+                         _TCQM.Address.Country == null || _TCQM.Address.Region == null || _TCQM.Address.Subcity == null || _TCQM.Address.Woreda == null || _TCQM.Address.HouseNumber == null)">
+                        <RadzenCard>
+                            <div class="row">
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ8"] </RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.HavePrivacyPolicy" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "PrivacyPolicyYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.HavePrivacyPolicy" Change=@(args => OnCheckBoxChanged(args, "PrivacyPolicyNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                @if (_TCQM.HavePrivacyPolicy)
+                                {
+                                    <div class="col-md-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ9"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenTextBox Class="w-100" @bind-Value="_TCQM.PrivacyPolicyLink" Placeholder="@_localizer["TCQ9"]" />
+                                        </RadzenCard>
+                                    </div>
+                                }
+
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                            @_localizer["TCQ10"] <span>*</span>
+                                        </RadzenText>
+                                        <ol>
+                                            @foreach (var item in _TCQM.Services)
+                                            {
+                                                <li>@item</li>
+                                            }
+                                        </ol>
+                                        <div class="row">
+                                            <RadzenTextBox Class="w-75" @bind-Value="_service" Placeholder="@_localizer["Services"]" />
+                                            <RadzenButton Class="w-25" Text="@_localizer["Add"]" Disabled="_service == null" Click="OnAdd" />
+                                        </div>
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ11"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.CreateAccount" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "CreateAccountYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.CreateAccount" Change=@(args => OnCheckBoxChanged(args, "CreateAccountNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ12"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.SharePost" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "SharePostYes")) />
+                                        <RadzenLabel Text="@_localizer["yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.SharePost" Change=@(args => OnCheckBoxChanged(args, "SharePostNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ13"]?</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.UseUsersContent" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "UseUserContentYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.UseUsersContent" Change=@(args => OnCheckBoxChanged(args, "UseUserContentNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ14"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.ReserveRights" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "ReserveRightsYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.ReserveRights" Change=@(args => OnCheckBoxChanged(args, "ReserveRightsNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ15"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.SendNewsletters" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "SendNewsLetterYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.SendNewsletters" Change=@(args => OnCheckBoxChanged(args, "SendNewsLetterNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                @if (_TCQM.SendNewsletters)
+                                {
+                                    <div class="col-md-4 col-lg-4 pb-2">
+
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ16"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_newsLetterMethod TextProperty="Newsletter Update" Change=@(args => OnNewsletterMethodChanged(args, "audience age")) />
+                                        </RadzenCard>
+                                    </div>
+                                }
+
+                                @if (_TCQM.Platform != "Website")
+                                {
+                                    <div class="col-md-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ28"]</RadzenText>
+                                            <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.SendPushNotifications" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "SendPushNotificationsYes")) />
+                                            <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                            <br />
+                                            <RadzenCheckBox Name="No" Value="!_TCQM.SendPushNotifications" Change=@(args => OnCheckBoxChanged(args, "SendPushNotificationsNo")) TValue="bool" Class="mt-2 ml-3" />
+                                            <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                        </RadzenCard>
+                                    </div>
+                                }
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ17"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.ThirdPartyLinks" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "ThirdPartyLinksYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.ThirdPartyLinks" Change=@(args => OnCheckBoxChanged(args, "ThirdPartyLinksNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ18"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.AgeLimitation" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "AgeLimitationYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.AgeLimitation" Change=@(args => OnCheckBoxChanged(args, "AgeLimitationNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                @if (_TCQM.AgeLimitation)
+                                {
+                                    <div class="col-md-4 col-lg-4 pb-2">
+
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ19"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_audienceAge TextProperty="Audience Age" Change=@(args => OnAudienceAgeChanged(args, "audience age")) />
+                                        </RadzenCard>
+                                    </div>
+                                }
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ20"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.CommercialPurpose" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "CommercialPurposeYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.CommercialPurpose" Change=@(args => OnCheckBoxChanged(args, "CommercialPurposeNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                            </div>
+                        </RadzenCard>
+                    </RadzenStepsItem>
+                    <RadzenStepsItem Text="@_localizer["T-CStep3"]" Disabled="(_TCQM.Services.Count == 0)">
+                        <RadzenCard>
+                            <div class="row">
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ21"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.CommercialPurpose" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "CommercialPurposeYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.CommercialPurpose" Change=@(args => OnCheckBoxChanged(args, "CommercialPurposeNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ22"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.LiabilityLimitation" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "LiabilityLimitationYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.LiabilityLimitation" Change=@(args => OnCheckBoxChanged(args, "LiabilityLimitationNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                @if (_TCQM.CreateAccount)
+                                {
+                                    <div class="col-md-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ23"]</RadzenText>
+                                            <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.TerminateAccounts" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "TerminateAccountsYes")) />
+                                            <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                            <br />
+                                            <RadzenCheckBox Name="No" Value="!_TCQM.TerminateAccounts" Change=@(args => OnCheckBoxChanged(args, "TerminateAccountsNo")) TValue="bool" Class="mt-2 ml-3" />
+                                            <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                        </RadzenCard>
+                                    </div>
+                                    <div class="col-md-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ24"]</RadzenText>
+                                            <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.NoticeTermination" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "NoticeTerminationYes")) />
+                                            <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                            <br />
+                                            <RadzenCheckBox Name="No" Value="!_TCQM.NoticeTermination" Change=@(args => OnCheckBoxChanged(args, "NoticeTerminationNo")) TValue="bool" Class="mt-2 ml-3" />
+                                            <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                        </RadzenCard>
+                                    </div>
+                                }
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ25"]</RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_TCQM.NotifyUpdate" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "NotifyUpdateYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_TCQM.NotifyUpdate" Change=@(args => OnCheckBoxChanged(args, "NotifyUpdateNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                @if (_TCQM.NotifyUpdate)
+                                {
+                                    <div class="col-md-4 col-lg-4 pb-2">
+
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["TCQ26"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_notifyUpdate TextProperty="Notify Update" Change=@(args => OnNotifyUpdateChanged(args, "Notify Update")) />
+                                        </RadzenCard>
+                                    </div>
+                                }
+                                <RadzenCard Class="w-100  pb-2">
+                                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["TCQ27"] <span>*</span></RadzenText>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["Email"]</RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.Email" Placeholder="@_localizer["Email"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PhoneNumber"]
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_TCQM.PhoneNumber" Placeholder="@_localizer["PhoneNumber"]" />
+                                            </RadzenCard>
+                                        </div>
+                                    </div>
+                                </RadzenCard>
+                            </div>
+                        </RadzenCard>
+                    </RadzenStepsItem>
+
+                </Steps>
+
+            </RadzenSteps>
+            <div class="mt-1">
+                <h5>@_localizer["P-PH3"]</h5>
+
+                <div class="w-100">
+                    <RadzenButton Class="w-100" Icon="check_circle" BusyText="@_localizer["Generating"]" IsBusy=@busy Click=@OnBusyClick Text="@_localizer["Generate"]"
+                                  Disabled="@( (_TCQM.Email == null && _TCQM.PhoneNumber == null) || _lang == null)" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    @if (_lang == "English")
+    {
+        <GeneratedTermsAndCondition OnChangeAnswer="OnChangeAnswer" _TCQM="_TCQM" />
+    }
+    else
+    {
+        <GeneratedTermsAndConditionAm OnChangeAnswer="OnChangeAnswer" _TCQM="_TCQM" />
+    }
+}

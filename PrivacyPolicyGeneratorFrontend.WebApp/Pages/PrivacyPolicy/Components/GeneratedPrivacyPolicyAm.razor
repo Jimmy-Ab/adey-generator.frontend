@@ -1,0 +1,492 @@
+﻿@using Radzen.Blazor
+@inject IStringLocalizer<Resource> _localizer
+
+
+<div class="cont">
+    <div class="card rz-shadow-1" style="font-size: 16px; min-height: 90vh;">
+        <div id="cont">
+            <div class="d-flex justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    የግላዊነት መመርያ
+                </h4>
+            </div>
+            <div class="d-flex justify-content-start mt-2">
+                <h4 style="font-size: 25px;">መግቢያ</h4>
+            </div>
+            <p style="text-align: justify; text-align-last: left;">
+                የእርስዎ የግል ዳታ ቅድሚያ የምንሰጠው ጉዳይ ነው።
+            </p>
+            <p style="text-align: justify; text-align-last: left;">ከእኛ ጋር ስለሚያ0ጋሩት የግል ዳታ ደህንነት እንዲሰማዎት እንፈልጋለን ለዚህም ነው ይህን የግላዊነት መመሪያ የምናቀርበው። በዚህ የግላዊነት መመርያ ውስጥ፣ የምንሰበስበውን የግል ዳታ፣ እንዴት እንደምንጠቀምበት፣ ለምን ዓላማ እንደምንጠቀም፣ ለምን ያህል ጊዜ እንደምናቆይ፣ ከማን ጋር እንደምንጋራ እና መብቶችዎን ልንገልጽልዎ እንፈልጋለን።</p>
+            @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+            {
+                <p style="text-align: justify; text-align-last: left;">እባኮትን <strong>@_PPQM.WebsiteName</strong> ድህረ ገጽ ከመጠቀሞ በፊት ይህን የግላዊነት መመሪያ ያንብቡ፡፡</p>
+            }
+            @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+            {
+                <p style="text-align: justify; text-align-last: left;">እባኮትን <strong>@_PPQM.WebsiteName</strong> መተግበሪያ ከመጠቀሞ በፊት ይህን የግላዊነት መመሪያ ያንብቡ፡፡</p>
+            }
+            @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+            {
+                <p style="text-align: justify; text-align-last: left;">እባኮትን <strong>@_PPQM.WebsiteName</strong> ድህረ ገጽ እና መተግበሪያ ከመጠቀሞ በፊት ይህን የግላዊነት መመሪያ ያንብቡ፡፡</p>
+            }
+
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    የቃላት ፍቺ ለዚህ የግላዊነት መመሪያ ብቻ
+                </h5>
+                <ul>
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li>
+                            <strong>ድህረ ገጽ:-  @_PPQM.WebsiteName</strong> ድህረ ገጽ ያመለክታል፡፡
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li>
+                            <strong>መተግበሪያ:-  @_PPQM.WebsiteName</strong> መተግበሪያ ያመለክታል፡፡
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li>
+                            <strong>ድህረ ገጽ እና መተግበሪያ:-  @_PPQM.WebsiteName</strong> መተግበሪያ እና ድህረ ገጽ ያመለክታል፡፡
+                        </li>
+                    }
+
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li><strong>እርስዎ: -</strong>ድህረ ገጽን የሚጠቀም ማንኛውም ግለሰብ ወይም ኩባንያን ወይም ሌላ ህጋዊ አካልን ወክሎ የሚጠቀም ግለሰብ ማለት ነው።</li>
+
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li><strong>እርስዎ: -</strong>መተግበሪያውን የሚጠቀም ማንኛውም ግለሰብ ወይም ኩባንያን ወይም ሌላ ህጋዊ አካልን ወክሎ የሚጠቀም ግለሰብ ማለት ነው።</li>
+
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li><strong>እርስዎ: -</strong>መተግበሪያውን ወይም ድህረ ገጽን የሚጠቀም ማንኛውም ግለሰብ ወይም ኩባንያን ወይም ሌላ ህጋዊ አካልን ወክሎ የሚጠቀም ግለሰብ ማለት ነው።</li>
+                    }
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li>
+                            <strong>እኛ፣ የእኛ:-  @_PPQM.WebsiteName</strong>  ድህረ ገጽ ማለት ነው።
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li>
+                            <strong>እኛ፣ የእኛ:-  @_PPQM.WebsiteName</strong> መተግበሪያ ማለት ነው።
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li>
+                            <strong>እኛ፣ የእኛ:-  @_PPQM.WebsiteName</strong> መተግበሪያ ወይም ድህረ ገጽ ማለት ነው።
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li><strong>ዳታ: -</strong> ከድህረ ገፃችን ተጠቃሚዎች ወይም ጎብኝዎች የምንሰበስበው የግል ዳታ ማለት ነው።</li>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li><strong>ዳታ: -</strong> ከመተግበሪያችን ተጠቃሚዎች ወይም ጎብኝዎች የምንሰበስበው የግል ዳታ ማለት ነው።</li>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li><strong>ዳታ: -</strong> ከድህረ ገፃችን ወይም ከመተግበሪያችን ተጠቃሚዎች ወይም ጎብኝዎች የምንሰበስበው የግል ዳታ ማለት ነው።</li>
+                    }
+                </ul>
+            </div>
+            @if (_PPQM.CollectPersonalInformation)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">
+                        ምን አይነት መረጃ እንሰበስባለን?
+                    </h5>
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">ለተጠቃሚዎች አገልግሎታችንን  ለማካሄድ እና ለማሻሻል መረጃ እንሰበስባለን፡፡ይህን ድህረ ገጽ ለመጠቀም የተወሰነ መረጃ ሊሰጡን ይገባል። ይህ መረጃ አገልግሎታችንን ለመጠቀም አስፈላጊ ነው ያለዚህ መረጃ አገልግሎታችንን መጠቀም አይችሉም። የምንሰበስባቸው ዳታዎች:-</p>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">ለተጠቃሚዎች አገልግሎታችንን  ለማካሄድ እና ለማሻሻል መረጃ እንሰበስባለን፡፡ይህን መተግበሪያ ለመጠቀም የተወሰነ መረጃ ሊሰጡን ይገባል። ይህ መረጃ አገልግሎታችንን ለመጠቀም አስፈላጊ ነው ያለዚህ መረጃ አገልግሎታችንን መጠቀም አይችሉም። የምንሰበስባቸው ዳታዎች:-</p>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">ለተጠቃሚዎች አገልግሎታችንን  ለማካሄድ እና ለማሻሻል መረጃ እንሰበስባለን፡፡ይህን መተግበሪያ ወይም ድህረ ገጽ ለመጠቀም የተወሰነ መረጃ ሊሰጡን ይገባል። ይህ መረጃ አገልግሎታችንን ለመጠቀም አስፈላጊ ነው ያለዚህ መረጃ አገልግሎታችንን መጠቀም አይችሉም። የምንሰበስባቸው ዳታዎች:-</p>
+                    }
+                    <ul>
+                        @if (_PPQM.TypesOfDataCollected.Name)
+                        {
+                            <li>ስም</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Address)
+                        {
+                            <li>አድራሻ</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Email)
+                        {
+                            <li>ኢሜይል</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.PhoneNumber)
+                        {
+                            <li>ስልክ</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Age)
+                        {
+                            <li>ዕድሜ</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Gender)
+                        {
+                            <li>ጾታ</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Payment)
+                        {
+                            <li>
+                                የክፍያ ሂደት መረጃ
+                            </li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Location)
+                        {
+                            <li>አካባቢ</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Others)
+                        {
+                            foreach (var item in _otherDatas)
+                            {
+                                <li>@item</li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">ምን አይነት መረጃ እንሰበስባለን?</h5>
+                    <p style="text-align: justify; text-align-last: left;">አገልግሎታችንን ለማካሄድ አስፈላጊ ያልሆነውን የግል ዳታ አንሰበስብም። በተቻለን አቅም የምንሰበስበውን የግል ዳታ ለመቀነስ እንሞክራለን፡፡ በግል የሚለይ መረጃ አንሰበስብም። መመሪያዎቻችንን ከቀየርን ወይም ዳታ መሰብሰብ ከጀመርን ከመጀመራችን በፊት እናሳውቅዎታለን።</p>
+                </div>
+            }
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">የአጠቃቀም ውሂብ</h5>
+                <p style="text-align: justify; text-align-last: left;">የአጠቃቀም ውሂብ አገልግሎቱን ሲጠቀሙ በራስ-ሰር ይሰበሰባል. የአጠቃቀም ውሂቡ እንደ መሳሪያዎ የበይነመረብ ፕሮቶኮል አድራሻ (ለምሳሌ አይፒ አድራሻ)፣ የአሳሽ አይነት፣ የአሳሽ ስሪት፣ የሚጎበኟቸው የአገልግሎታችን ገፆች፣ የጉብኝትዎ ጊዜ እና ቀን፣ እና በእነዚያ ገፆች ላይ ያሳለፉትን ጊዜ የመሳሰሉ መረጃዎችን ሊያካትት ይችላል።</p>
+                @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                {
+                    <p style="text-align: justify; text-align-last: left;">ድረ-ገጽ ሲጠቀሙ ፣ የሚጠቀሙት የሞባይል መሳሪያ አይነት፣ የሞባይል መሳሪያዎ አይፒ አድራሻ፣ የሞባይል ኦፕሬቲንግ ሲስተም እና የሞባይል ኢንተርኔት አይነትን ጨምሮ የተወሰኑ ቴክኒካዊ መረጃዎችን በራስ ሰር እንሰበስባለን። የሚጠቀሙበት አሳሽ. በጂፒኤስ፣ በብሉቱዝ ወይም በዋይ ፋይ ምልክቶች በኩል የተወሰኑ ጂኦግራፊያዊ አካባቢዎችን ጨምሮ የመሣሪያ አካባቢዎች መረጃዎች እንሰበስባለን።</p>
+                }
+                @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                {
+                    <p style="text-align: justify; text-align-last: left;">መተግበሪያ ሲጠቀሙ ፣ የሚጠቀሙት የሞባይል መሳሪያ አይነት፣ የሞባይል መሳሪያዎ አይፒ አድራሻ፣ የሞባይል ኦፕሬቲንግ ሲስተም እና የሞባይል ኢንተርኔት አይነትን ጨምሮ የተወሰኑ ቴክኒካዊ መረጃዎችን በራስ ሰር እንሰበስባለን። የሚጠቀሙበት አሳሽ. በጂፒኤስ፣ በብሉቱዝ ወይም በዋይ ፋይ ምልክቶች በኩል የተወሰኑ ጂኦግራፊያዊ አካባቢዎችን ጨምሮ የመሣሪያ አካባቢዎች መረጃዎች እንሰበስባለን።</p>
+                }
+                @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                {
+                    <p style="text-align: justify; text-align-last: left;">መተግበሪያ ወይም ድረ-ገጽ ሲጠቀሙ ፣ የሚጠቀሙት የሞባይል መሳሪያ አይነት፣ የሞባይል መሳሪያዎ አይፒ አድራሻ፣ የሞባይል ኦፕሬቲንግ ሲስተም እና የሞባይል ኢንተርኔት አይነትን ጨምሮ የተወሰኑ ቴክኒካዊ መረጃዎችን በራስ ሰር እንሰበስባለን። የሚጠቀሙበት አሳሽ. በጂፒኤስ፣ በብሉቱዝ ወይም በዋይ ፋይ ምልክቶች በኩል የተወሰኑ ጂኦግራፊያዊ አካባቢዎችን ጨምሮ የመሣሪያ አካባቢዎች መረጃዎች እንሰበስባለን።</p>
+                }
+            </div>
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">የእርስዎን ዳታ እንዴት እንጠቀማለን?</h5>
+                <p style="text-align: justify; text-align-last: left;">
+                    የተሰበሰበ መረጃን ለተለያዩ ዓላማዎች እንጠቀማለን እነዚህም
+                </p>
+                <ul>
+                    @if (_PPQM.PurposeOfCollection.Run)
+                    {
+                        if (_PPQM.Platform == "Website")
+                        {
+                            <li>በድህረ ገፁ ለማስኬድ እና ለማንቀሳቀስ።</li>
+                        }
+                        if (_PPQM.Platform == "Application")
+                        {
+                            <li> መተግበሪያውን ለማስኬድ እና ለማንቀሳቀስ።</li>
+                        }
+                        if (_PPQM.Platform == "Both")
+                        {
+                            <li> መተግበሪያውን ወይም በድህረ ገፁ ለማስኬድ እና ለማንቀሳቀስ።</li>
+                        }
+                    }
+                    @if (_PPQM.PurposeOfCollection.Provide)
+                    {
+                        <li>የጠየቁትን ምርቶችን እና አገልግሎቶችን ለማቅረብ።</li>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Improve)
+                    {
+                        <li>አገልግሎታችንን ለማሻሻል እና ግላዊ ለማድረግ።</li>
+
+                        <ul>
+                            @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                            {
+                                <li>በድህረ ገፁ ላይ የተሻለ አገልግሎት ለማቅረብ እንዲሁም አገልግሎታችንን ለግል አጠቃቀም ለማበጀት የተሰበሰበ መረጃን እንጠቀማለን።</li>
+                            }
+                            @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                            {
+                                <li>በመተግበሪያው ላይ የተሻለ አገልግሎት ለማቅረብ እንዲሁም አገልግሎታችንን ለግል አጠቃቀም ለማበጀት የተሰበሰበ መረጃን እንጠቀማለን።</li>
+                            }
+                            @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                            {
+                                <li>በመተግበሪያው ወይም በድህረ ገፁ ላይ የተሻለ አገልግሎት ለማቅረብ እንዲሁም አገልግሎታችንን ለግል አጠቃቀም ለማበጀት የተሰበሰበ መረጃን እንጠቀማለን።</li>
+                            }
+                        </ul>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Communicate)
+                    {
+                        <li>ከእርሶ ጋር ለመገናኘት።</li>
+                        <ul>
+                            <li>
+                                ለእርስዎ አስተያየት ወይም ጥያቄ ምላሽ ለመስጠት የተሰበሰበውን ዳታ እንጠቀማለን። እንዲሁም ማስታወቂያ እና አዳዲስ ምርቶችን ለእርስዎ ለመላክ።
+                            </li>
+                        </ul>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Payment)
+                    {
+                        <li>ክፍያዎችን ለማስኬድ።</li>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Research)
+                    {
+                        <li>የገበያ ጥናት ለማካሄድ።</li>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Security)
+                    {
+                        <li>የገበያ ጥናት ለማካሄድ።</li>
+                    }
+                    @if (_otherPurposes != null)
+                    {
+                        foreach (var item in _otherPurposes)
+                        {
+                            <li>@item።</li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    መብቶት ምንድን ነው?
+                </h5>
+                <ul>
+                    <li>
+                        መረጃ የማግኘት መብት፡ የእርስዎን ዳታ እንዴት እንደምንሰበስብ እና እንደምንጠቀም የማወቅ መብት አልዎት።
+                    </li>
+                    <li>
+                        የተደራሽነት መብት፡ ስለእርስዎ የምናስቀምጠውን የግል መረጃ የመገምገም ወይም ቅጂ የመቀበል መብት አልዎት።
+                    </li>
+                    <li>
+                        የማስተካከል መብት፡ የእርስዎ ዳታ ትክክል እንዳልሆነ ወይም ያልተሟላ ሆኖ ከተመዘገበ መረጃዎን እንዲስተካከል የመጠየቅ መብት አለዎት።
+                    </li>
+                    <li>
+                        የመደምሰስ መብት ፡-  የተሰበሰበውን ዳታ እንዲሰረዝ የመጠየቅ መብት አልዎት።
+                    </li>
+                    <li>
+                        የመቃወም መብት፡ በፈለጉት ጊዜ የእርስዎን ዳታ እንዳይቀናበር የመቃወም መብት አለዎት።
+                    </li>
+                    <li>ማቀናበርን የመገደብ መብት፡-</li>
+                    <li>የዳታ ፖርታቢሊቲ መብት፡ ዳታዎን ከእኛ ወደ ሌላ መቆጣጠሪያ የማዛወር መብት አልዎት እና ዳታዎን በተዋቀረ፣ በተለምዶ ጥቅም ላይ በሚውል እና በማሽን ሊነበብ በሚችል ቅርጽ የመቀበል መብት አለዎት።</li>
+                </ul>
+                <p style="text-align: justify; text-align-last: left;">
+                    እነዚህን መብቶች ለመጠቀም ከፈለጉ እኛን በማነጋገር ሊያደርጉን ይችላሉ። ከጥያቄው በኋላ፣ ማንነትዎን ለማረጋገጥ ተጨማሪ መረጃ ከእርስዎ ልንጠይቅ እንችላለን።
+                </p>
+            </div>
+            @if (_PPQM.UseCookies)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">
+                        ኩኪዎች እና ሌሎች የመከታተያ ቴክኖሎጂ
+                    </h5>
+                    <p style="font-size: 20px;">
+                        ኩኪ ምንድን ነው?
+                    </p>
+                    <p style="text-align: justify; text-align-last: left;">
+                        ኩኪ ወደ አሳሽህ የሚላክ እና በኮምፒተሮት ወይም በሞባይል መሳሪያዎት ሃርድ ድራይቭ ላይ የሚከማች ትንሽ መጠን ያለው ዳታ ነው። የድር አገልጋዮቹ ወደ ፕላትፎርሙ ስለጎበኟቸው ማሳወቂያ ይደርሳቸዋል፣ እና፣ በተራው፣ አገልጋዩ ስለ ጉብኝትዎ እና የአጠቃቀምዎ ስርዓተ እውቀት ሊኖረው ይችላል።
+                    </p>
+                    @if (_cookieTypes != null)
+                        {
+                        <div class="ml-2">
+                            <h5 style="font-size: 20px;">የተጠቀምንባቸው የኩኪዎች ዝርዝር እነሆ</h5>
+                            <ul>
+                                @if (_cookieTypes.Any(c => c == "First Party Cookie" || c == "የመጀመሪያ ወገን ኩኪዎች"))
+                                    {
+                                    <li><strong>የመጀመሪያ ወገን ኩኪዎች: -</strong> በእኛ የተዘጋጁ ኩኪዎች</li>
+                                    }
+                                @if (_cookieTypes.Any(c => c == "Third Party Cookie" || c == "የሶስተኛ ወገን ኩኪዎች"))
+                                    {
+                                    <li><strong>የሶስተኛ ወገን ኩኪዎች: -</strong> ከኛ ውጪ በሶስተኛ ወገን ወይም በሌላ የተዘጋጁ ኩኪዎች። ይህ ኩኪ የሌላ ድረገፅን ጉብኝቶችን ለመከታተል፣ ለማደስ እና ለማስታወቂያ አገልግሎት ያገለግላል።</li>
+                                    }
+                                @if (_cookieTypes.Any(c => c == "Temporary Cookie" || c == "ጊዜያዊ ኩኪዎች"))
+                                    {
+                                    <li>
+                                        <strong>ጊዜያዊ ኩኪዎች:-</strong>  የእንቅስቃሴዎን መረጃ በድረ-ገጹ ላይ እስካሉ ድረስ   ብቻ የሚይዝ  ነው ። አንዴ ድረገፁን ከዘጉ ወይም መሳሪያውን ካጠፉት ኩኪው ይሰረዛል። እነዚህ በመገበያያ ድረ-ገጾች ወይም በኢ-ኮሜርስ ድረ-ገጾች ላይ በብዛት ጥቅም ላይ ይውላሉ ።
+                                    </li>
+                                    }
+                                @if (_cookieTypes.Any(c => c == "Permanent Cookie" || c == "ቋሚ ኩኪዎች"))
+                                    {
+                                    <li><strong>ቋሚ ኩኪዎች:-</strong> ከድረገፁ ቢወጡም ወይም መሳሪያ ዘግተውት ቢሆንም ኩኪዎቹ በስራ ላይ ይቆያሉ ፡፡ ድረገፁን በጎበኙ ቁጥር የመግቢያ ዝርዝሮችን እና የይለፍ ቃሎችን ማስታወስ ስለሚችሉ  በተጠቀሙ ቁጥር እንደገና ማስገባት አያስፈልግዎትም።</li>
+                                    }
+                            </ul>
+                        </div>
+                        }
+                        <p style="text-align: justify; text-align-last: left;"> እንደ ዌብ ቢኮኖች ያሉ ሌሎች የመከታተያ ቴክኖሎጂዎችንም እንጠቀማለን። ቢኮኖች ትናንሽ ግራፊክ ምስሎች (ፒክስል ታጎች ወይም ግልጽ GIFsበመባል ይታወቃሉ) የተጠቃሚዎቻችንን እንቅስቃሴ  ለምሳሌ አንድ ተጠቃሚ ድረ-ገጻችንን በየስንት ጊዜው እንደጎበኘ የሚያውቁ ናቸው፡፡</p>
+                        <p style="text-align: justify; text-align-last: left;">
+                            የተሻለ፣ ፈጣን እና ደህንነቱ የተጠበቀ ልምድ እና ለማስታወቂያ አላማ ለማቅረብ ሌላ ተመሳሳይ ቴክኖሎጂን ልንጠቀም እንችላለን ።
+                            እነዚህን የመከታተያ ቴክኖሎጂዎች አለመቀበል መብት አልዎት ነገር ግን ካልተቀበሉ በአገልግሎቶቹ የሚገኙ ሁሉንም አገልግሎት ላይደርሶት ይችላል።
+                        </p>
+                    </div>
+            }
+            @if (_PPQM.ShareData)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">
+                        መረጃን መግለፅ እና ማጋራት
+                    </h5>
+                    <p style="text-align: justify; text-align-last: left;">
+                        የእርስዎን ዳታ ለሌሎች አካላት፣ ኩባንያዎች ወይም ሰዎች ልናጋራ እንችላለን ። ከነዚህም ውስጥ
+                    </p>
+                    <ul>
+                        @if (_thirdParties.Any(t => t == "Suppliers" || t == "አቅራቢዎች"))
+                        {
+                            <li>ለአቅራቢዎቻችን።</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "Business Partners" || t == "የንግድ አጋሮች"))
+                        {
+                            <li>ለንግድ አጋሮቻችን።</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "Services Providers" || t == "አገልግሎት አቅራቢዎች"))
+                        {
+                            <li>
+                                ለአገልግሎት አቅራቢዎቻችን (የአይቲ እና የመሠረተ ልማት ድጋፍ አገልግሎቶች ማስታወቂያ፣ ግብይት እና የክፍያ ሂደት አገልግሎቶች)።
+                            </li>
+                        }
+                        @if (_thirdParties.Any(t => t == "Comply With The Law" || t == "ህጉን ያክብሩ"))
+                        {
+                            <li>በህግ ግዴታ ሲኖርብን።</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "To Investigate Security" || t == "ደህንነትን ለመመርመር"))
+                        {
+                            <li>የተጠቃሚ ስምምነታችንን ሲጣስ ለመርምር ወይም ስምምነታችንን ማስፈጸም።</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "In Case Of Merger Purchase Or Sale Of Business" || t == "የንግድ ግዢ ወይም ሽያጭን በተመለከተ"))
+                        {
+                            <li>ከፊል ወይም የሁሉንም ንግዶቻችን ውህደት፣ ግዢ ወይም ሽያጭ በሚደረግበት ጊዜ።</li>
+                        }
+                    </ul>
+                    <p style="text-align: justify; text-align-last: left;">
+                        ዳታዎን ለሶስተኛ ወገኖች ስናጋራ ወይም ስንገልጽ ህጋዊ መስፈርቶችን እናከብራለን እና በተለይም ከዳታዎ ተቀባዮች ጋር ተገቢውን ስምምነቶችን እናደርጋለን።
+                    </p>
+                </div>
+            }
+            else
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">መረጃን ይፋ ማድረግ እና ማጋራት?</h5>
+                    <p style="text-align: justify; text-align-last: left;">
+                        ለእርስዎ ዳታ በቂ ጥበቃን እናረጋግጣለን። ማንኛውንም ዳታ ለማንም አናጋራም።
+                    </p>
+                </div>
+            }
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    የእርስዎን ዳታ ለምን ያህል ጊዜ እናቆየዋለን?
+                </h5>
+                <p style="text-align: justify; text-align-last: left;">
+                    የእርስዎን ዳታ የምናማቸው መለያዎ ንቁ እስከሆነ ድረስ ወይም ያለብንን ግዴታ ለመወጣት አስፈላጊ ሆኖ ሲገኝ ወይም እንደ ታክስ ያሉ መረጃዎችን ለማከማቸት በህጋዊ መንገድ ለሚፈቀዱ ምክንያቶች ብቻ ነው እና በዚህ ሁኔታ የተከማቹ ዳታዎ ለተገለፁተት ዓላማዎች ብቻ  የሚቀናበር ይሆናል፡፡ ከደንበኝነት ምዝገባ እስክትወጡ ወይም ያንን መረጃ ከቀጥታ ስርዓታችን እንድንሰርዝ እስክትጠይቁ ድረስ የእውቂያ መረጃን (እንደ ኢሜል መላኪያ ዝርዝር መረጃ) እናቆያለን። ከላይ የተዘረዘሩት ምክንያቶች ከሌሉ  ዳታዎን እንሰርዛለን።
+                </p>
+            </div>
+            @if (_PPQM.UseRemarketingForAdvertising)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">
+                        የዳግም ማሻሻጫዎች ማስታወቂያ
+                    </h5>
+                    <p style="text-align: justify; text-align-last: left;">
+                        የዳግም ማሻሻጫ ማስታወቂያዎችን እንጠቀማለን። ዳግም ማሻሻጥ ማለት ድረ-ገጻችንን ከጎበኙ በኋላ ኢንተርኔት መጠቀምዎን ሲቀጥሉ ማስታወቂያዎቻችንን ማሳየት ማለት ነው። ይህ የሚደረገው የተለያዩ ድረ-ገጾችን ሲጎበኙ የአጠቃቀም ባህሪዎን ለመቅዳት እና ለመገምገም Google የሚጠቀምባቸውን በአሳሽዎ ውስጥ የተከማቹ ኩኪዎችን በመጠቀም ነው። በዚህ መንገድ፣ Google ከዚህ ቀደም ወደ ድረ-ገጻችን ያደረጉትን ጉብኝት ሊወስን ይችላል።
+                    </p>
+                </div>
+            }
+
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    የደህንነት መለኪያ
+                </h5>
+                <p style="text-align: justify; text-align-last: left;">
+                    የእርስዎን ዳታ ለመጠበቅ ጠንክረን እንሰራለን። በህጋዊ መስፈርቶች መሰረት በማስተላለፊያ ወይም በማከማቻ ጊዜ የእርስዎን ዳታ ካልተፈቀደ መዳረሻ፣ አጠቃቀም፣ ይፋ ከማድረግ ወይም ከመጥፋት ለመጠበቅ በአጠቃላይ ተቀባይነት ያላቸውን የቴክኖሎጂ እና ተቁማዊ እርምጃዎችን ወስደን እንተገብራለን። አላግባብ መጠቀምን፣ ውድመትን እና የዳታ ለውጥን ለመከላከል ሁለቱም የመስመር ላይ እና ከመስመር ውጭ ጥበቃዎች እናደርጋለን።
+                </p>
+            </div>
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    የልጆች ዳታ
+                </h5>
+                <p style="text-align: justify; text-align-last: left;">
+                    አገልግሎታችን ከ@_PPQM.AudienceAge.Replace(">", "") ዓመት በታች የሆነን ልጅ አያስተናግድም ፣ እና እርስዎ ከ@_PPQM.AudienceAge.Replace(">", "")። አመት በታች ከሆኑ አገልግሎቶቻችንን መጠቀም አይችሉም። እያወቅን ከ@_PPQM.AudienceAge.Replace(">", "") አመት በታች ከሆኑ ህጻናት በግል የሚለይ መረጃ አንሰበስብም። ከ@_PPQM.AudienceAge.Replace(">", "") ዓመት በታች የሆነ ልጅ የግል መረጃ እንደሰጠን ካወቅን ወዲያውኑ ይህንን ከአገልጋዮቻችን ላይ እንሰርዛለን። እርስዎ ወላጅ ወይም አሳዳጊ ከሆኑ እና ልጅዎ የግል መረጃ እንደሰጠን የሚያውቁ ከሆነ፣ እባክዎን አስፈላጊውን እርምጃ እንድንወስድ ያነጋግሩን።
+                </p>
+            </div>
+            @if (_PPQM.ProvideHyperlinks)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;"    >
+                        ድር ጣቢያዎች አገናኞች
+                    </h5>
+                    <p style="text-align: justify; text-align-last: left;">
+                        የእኛ ድረ-ገጽ በእኛ ባለቤትነት ያልተያዙ ወይም እኛ ማንቆጣጠራቸወ የሌሎች መተግበሪያዎች ወይም ድር ጣቢያዎች አገናኞችን ሊይዝ ይችላል። በነዚህ ድር ጣቢያዎች  ላይ የሚለቀቁ ማናቸውም ነገሮች  በኛ ቁጥጥር ስር አደሉም ። ስለዚህ  ምንም ዓይነት ኃላፊነት አንወስድም፡፡. ከእኛ ድህረ ገፅ ወይም መተግበርያ በወጡ ቁጥር ድር ጣቢያዎች  ወይም መተግበሪያዎች የራሳቸው የግላዊነት መመሪያዎች እና ደንብ ስላላቸው እነሱን እንዲያነቡ እናበረታታዎታለን።
+                    </p>
+                </div>
+            }
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    በዚህ ግላዊነት መመሪያ ላይ የተደረጉ ለውጦች
+                </h5>
+                <p style="text-align: justify; text-align-last: left;">
+                    ሕጎችን ወይም ልማዶችን ወይም የንግድ ሥራን ለማሻሻል የግላዊነት መመሪያችንን ከጊዜ ወደ ጊዜ እናዘምናለን፡፡
+                </p>
+                <p style="text-align: justify; text-align-last: left;">
+                    ይህንን የግላዊነት መመረሪያ ካሻሻልን ወይም ካዘመንነው አዲሱ የግላዊነት መመሪያ ተግባራዊ ከመሆኑ በፊት እናሳውቅዎታለን። የግላዊነት መመሪያ ለውጦች በዚህ ገጽ ላይ ሲለጠፉ ውጤታማ ይሆናሉ። በዚህ የግላዊነት መመሪያ ውስጥ ማንኛውም ለውጥ ከተደረገ በኋላ ይህን ድህረ ገጽ መጠቀም ለውጡን  መቀበልን ያሳያል።
+                </p>
+                <h4 style="font-size: 25px;">
+                    እኛን ለማነጋገር
+                </h4>
+                <p>
+                    ይህንን የግላዊነት ፖሊሲ በተመለከተ ማንኛቸውም ጥያቄዎች ካሉ ከታች ያለውን መረጃ በመጠቀም ሊያገኙን ይችላሉ።
+                </p>
+                @if (_PPQM.OperatorType == "Company" || _PPQM.OperatorType == "ኩባንያ")
+                {
+                    <p>@_PPQM.BusinessName</p>
+                }
+                else
+                {
+                    <p>@_PPQM.WebsiteName</p>
+
+                }
+                <p> @_PPQM.Address.Subcity ክፍለ ከተማ ወረዳ  @_PPQM.Address.Woreda</p>
+                <p>የቤት ቁጥር @_PPQM.Address.HouseNumber</p>
+
+                <p> @_PPQM.Address.Region ፣  @_PPQM.Address.Country</p>
+                <p></p>
+                @if (_PPQM.Contact.PhoneNumber != null)
+                {
+                    <p>ስልክ: <a href="tel:@_PPQM.Contact.PhoneNumber">@_PPQM.Contact.PhoneNumber</a></p>
+                }
+                @if (_PPQM.Contact.Email != null)
+                {
+                    <p>ኢሜይል: <a href="@_PPQM.Contact.Email">@_PPQM.Contact.Email</a></p>
+                }
+            </div>
+            <div class="d-flex justify-content-end">
+                <p style="text-align: justify; text-align-last: left;">
+                    የሚሰራበት ቀን
+                    @_PPQM.EffectiveDate.ToShortDateString()
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 row">
+
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Class="w-100" Click="OnChangeAnswerCliked" Icon="arrow_back_ios" Text="@_localizer["Back"]" />
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Click="OnDownloadClicked" Class="w-100" Icon="download" Text="@_localizer["Download"]" />
+        </div>
+
+    </div>
+</div>
+

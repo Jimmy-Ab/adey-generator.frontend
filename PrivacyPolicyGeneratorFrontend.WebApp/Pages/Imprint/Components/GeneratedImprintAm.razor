@@ -1,0 +1,95 @@
+﻿@inject IStringLocalizer<Resource> _localizer
+
+<div class="cont">
+
+    <div class="card rz-shadow-1" style="font-size: 16px; min-height: 90vh;">
+        <div id="cont">
+            <div class="d-flex justify-content-center mt-1">
+                <h2 style="font-size: 25px;">
+                    የድርጅቱ መረጃ
+                </h2>
+            </div>
+            <div class="mt-1">
+                <h2>@_IQM.CompanyName</h2>
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>አድራሻ</h3>
+                <div class="m-3">   
+                    <p>
+                        @_IQM.CompanyAddress.Subcity ክ/ከተማ,  ወረዳ @_IQM.CompanyAddress.Woreda
+                        <br />
+                        የቤት ቁጥር:- @_IQM.CompanyAddress.HouseNumber
+                        <br />
+                        @_IQM.CompanyAddress.Region, @_IQM.CompanyAddress.Country
+                    </p>
+                </div>
+                @if (_IQM.AdditionalAddress != null)
+                {
+                    <h3>ተጨማሪ አድራሻ</h3>
+                    <div class="m-3">
+                        <p>@_IQM.AdditionalAddress</p>
+                    </div>
+
+                }
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>መገናኛ</h3>
+                <div class="m-3">
+                    <p>ስልክ: <a href="tel:@_IQM.PhoneNumber">@_IQM.PhoneNumber</a></p>
+
+                    <p>ኢ-ሜይል: <a href="mailto:@_IQM.Email">@_IQM.Email</a></p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start mt-1">
+                <p> <span style="font-size: 17px; font-weight: 600; color: black">የንግድ ምዝገባ ቁጥር:</span> @_IQM.BusinessRegisterNumber</p>
+            </div>
+            <div class="d-flex justify-content-start mt-1">
+                <p> <span style="font-size: 17px; font-weight: 600; color: black">የተጨማሪ እሴት ታክስ ቁጥር:</span> @_IQM.VATID</p>
+            </div>
+            <div class="d-flex justify-content-start mt-1">
+                <p> <span style="font-size: 17px; font-weight: 600; color: black">የግብር ከፋይ መለያ ቁጥር:</span> @_IQM.TaxNumber</p>
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>ዋና ስራ አስኪያጅ</h3>
+                <div class="m-3">
+                    <p>@_IQM.Representer</p>
+                </div>
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>
+                    ሕጋዊ ቅጽ
+                </h3>
+                <div class="m-3">
+                    <p>@_IQM.CompanyType</p>
+                </div>
+            </div>
+            @if (_IQM.OtherWebsiteLink)
+            {
+                <div class=" justify-content-start mt-2">
+                    <h3 style="font-size: 25px;">
+                        ድር ጣቢያ አገናኞች ተጠያቂነት
+                    </h3>
+                    <p style="text-align: justify; text-align-last: left;">
+                        የእኛ ድረ-ገጽ የሶስተኛ ወገኖች ውጫዊ ድረ-ገጾች አገናኞችን ሊይዝ ይችላል፣ በነዚህ ድረገፅ ላይ የሚለቀቁ ማናቸውም ነገሮች በኛ ቁጥጥር ስር አደሉም ። ስለዚህ ምንም ዓይነት ኃላፊነት አንወስድም፡፡. የድረገፅቹ አቅራቢ ወይም ኦፕሬተር ሁል ጊዜ ለተገናኙት ገፆች ይዘት ተጠያቂ ናቸው። ገፅቹን እኛ ድረገጽ ላይ ከመለቀቃቸው በፊት ህጋዊነታቸውን እናረጋግጣለን፡፡ ማንናኛውም ህገወጥ ጥሰቶች እንዳሉ ካወቅን ወዲያውኑ የሰረዛሉ፡፡
+                    </p>
+                </div>
+            }
+            <div class=" justify-content-start mt-2">
+
+                <p style="text-align: justify; text-align-last: left;"><strong>የቅጂ መብት:</strong> ሁሉም መብቶች የተጠበቁ ናቸው። <strong>@_IQM.CompanyName</strong> የተፈጠሩት ይዘቶች እና ስራዎች በኢትዮጵያ የቅጂ መብት ህግ ተገዢ ናቸው። ከቅጂ መብት ህግ ወሰን ውጭ ማባዛት፣ ማረም፣ ማሰራጨት እና ማንኛውም አይነት አጠቃቀም የጸሐፊውን ወይም የፈጣሪን የጽሁፍ ፈቃድ ይጠይቃሉ። ማንኛውም አይነት ይዘት ሙሉ በሙሉ ወይም በከፊል በሶስተኛ ወገኖች ተገቢ ያልሆነ አጠቃቀም በጥብቅ የተከለከለ ነው።</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="mt-4 row">
+
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Class="w-100" Click="OnChangeAnswerCliked" Icon="arrow_back_ios" Text="@_localizer["Back"]" />
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Click="OnDownloadClicked" Disabled="!paidForImprint" Class="w-100" Icon="download" Text="@_localizer["Download"]" />
+        </div>
+
+    </div>
+</div>

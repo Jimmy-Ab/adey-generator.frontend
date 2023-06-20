@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About us</value>
+    <comment/>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+    <comment/>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+    <comment/>
+  </data>
+  <data name="Adey" xml:space="preserve">
+    <value>Adey</value>
+    <comment/>
+  </data>
+  <data name="Adey-Generator" xml:space="preserve">
+    <value>Adey-Generator</value>
+    <comment/>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>To show Ads</value>
+    <comment/>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Age</value>
+    <comment/>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved</value>
+    <comment/>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Go back and change your answer</value>
+    <comment/>
+  </data>
+  <data name="Communicate" xml:space="preserve">
+    <value>To communicate with the user</value>
+    <comment/>
+  </data>
+  <data name="CompanyRepresenter" xml:space="preserve">
+    <value>Company Representer</value>
+    <comment/>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+    <comment/>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright</value>
+    <comment/>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download PDF</value>
+    <comment/>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+    <comment/>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+    <comment/>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+    <comment/>
+  </data>
+  <data name="GenerateI" xml:space="preserve">
+    <value>Generate Imprint</value>
+    <comment/>
+  </data>
+  <data name="GeneratePP" xml:space="preserve">
+    <value>Generate Privacy Policy</value>
+    <comment/>
+  </data>
+  <data name="GenerateTC" xml:space="preserve">
+    <value>Generate Terms &amp; Condition</value>
+    <comment/>
+  </data>
+  <data name="Generating" xml:space="preserve">
+    <value>Generating...</value>
+    <comment/>
+  </data>
+  <data name="Generator" xml:space="preserve">
+    <value>Generator</value>
+    <comment/>
+  </data>
+  <data name="Header1" xml:space="preserve">
+    <value>Generate Your Privacy Policy, Imprint, Terms &amp; Conditions</value>
+    <comment/>
+  </data>
+  <data name="Header2" xml:space="preserve">
+    <value>Creating your privacy policy, term and conditions,imprint for your website and applications could be stressful and time consuming. That is when we come in, we have provided you with a platform where with just answering a few questions all is done. Compliant with Ethiopian data.</value>
+    <comment/>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+    <comment/>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Homepage</value>
+    <comment/>
+  </data>
+  <data name="I-H1" xml:space="preserve">
+    <value>You can generate Imprint in two languages (English and Amharic). choose your preferred language before filling out the form. also please make sure that your answers are in your preferred language. required fields.</value>
+    <comment/>
+  </data>
+  <data name="I-H2" xml:space="preserve">
+    <value>The following questions help us generate an accurate Imprint. please answer them very carefully.</value>
+    <comment/>
+  </data>
+  <data name="IH1" xml:space="preserve">
+    <value>What is an Imprint and why do we need it?</value>
+    <comment/>
+  </data>
+  <data name="IH2" xml:space="preserve">
+    <value>An Imprint is essentially a statement of ownership and authorship. It was put into place in an effort to protect user data, combat illegal content and spam by making website owners identify themselves, and as a result assume responsibility for the content on their platform.</value>
+    <comment/>
+  </data>
+  <data name="Imprint" xml:space="preserve">
+    <value>Imprint</value>
+    <comment/>
+  </data>
+  <data name="Improve" xml:space="preserve">
+    <value>To Improve &amp; develop the service</value>
+    <comment/>
+  </data>
+  <data name="IQ1" xml:space="preserve">
+    <value>Company Name</value>
+    <comment/>
+  </data>
+  <data name="IQ2" xml:space="preserve">
+    <value>Type of Company </value>
+    <comment/>
+  </data>
+  <data name="IQ3" xml:space="preserve">
+    <value>Company Address</value>
+    <comment/>
+  </data>
+  <data name="IQ4" xml:space="preserve">
+    <value>Additional Address</value>
+    <comment/>
+  </data>
+  <data name="IQ5" xml:space="preserve">
+    <value>Business Register Number </value>
+    <comment/>
+  </data>
+  <data name="IQ6" xml:space="preserve">
+    <value>Vat ID</value>
+    <comment/>
+  </data>
+  <data name="IQ7" xml:space="preserve">
+    <value>Tax Number</value>
+    <comment/>
+  </data>
+  <data name="IQ8" xml:space="preserve">
+    <value>Who Represents The Company</value>
+    <comment/>
+  </data>
+  <data name="IQ9" xml:space="preserve">
+    <value>Does your website provide other website links?</value>
+    <comment/>
+  </data>
+  <data name="IStep1" xml:space="preserve">
+    <value>Click on "Generate" on navigation bar</value>
+    <comment/>
+  </data>
+  <data name="IStep2" xml:space="preserve">
+    <value>Choose "Imprint" in the menu or click a button bellow</value>
+    <comment/>
+  </data>
+  <data name="Istep3" xml:space="preserve">
+    <value>Fill the forms accordingly and,</value>
+    <comment/>
+  </data>
+  <data name="Istep4" xml:space="preserve">
+    <value>Finally click Generate</value>
+    <comment/>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+    <comment/>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>List</value>
+    <comment/>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+    <comment/>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+    <comment/>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+    <comment/>
+  </data>
+  <data name="Office" xml:space="preserve">
+    <value>Office</value>
+    <comment/>
+  </data>
+  <data name="Office1" xml:space="preserve">
+    <value>Bole Subcity Woreda 12</value>
+    <comment/>
+  </data>
+  <data name="Office2" xml:space="preserve">
+    <value>House number: New</value>
+    <comment/>
+  </data>
+  <data name="Office3" xml:space="preserve">
+    <value>Addis Ababa, Ethiopia</value>
+    <comment/>
+  </data>
+  <data name="OtherDatas" xml:space="preserve">
+    <value>List other Data you collect separated by comma(,)</value>
+    <comment/>
+  </data>
+  <data name="OtherPusposes" xml:space="preserve">
+    <value>List other purposes separated by comma(,)</value>
+    <comment/>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Others</value>
+    <comment/>
+  </data>
+  <data name="P-PH1" xml:space="preserve">
+    <value>You can create a privacy policy in two languages ​​(English and Amharic). Please select your preferred language before filling out the form. Also, please ensure that your answers are in the language of your choice. Required fields.</value>
+    <comment/>
+  </data>
+  <data name="P-PH2" xml:space="preserve">
+    <value>The following questions help us generate an accurate privacy policy. please answer them very carefully.</value>
+    <comment/>
+  </data>
+  <data name="P-PH3" xml:space="preserve">
+    <value>This button will be active when you finish filling the forms. make sure you selected language and every required field is filled!</value>
+    <comment/>
+  </data>
+  <data name="P-PStep1" xml:space="preserve">
+    <value>Platform, Business Detail &amp; Address</value>
+    <comment/>
+  </data>
+  <data name="P-PStep2" xml:space="preserve">
+    <value>User Info, Personal Data, Third parties &amp; Cookies</value>
+    <comment/>
+  </data>
+  <data name="P-PStep3" xml:space="preserve">
+    <value>Advertising, Tracking, Hyperlinks, Audience &amp; Contact</value>
+    <comment/>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>To process payment</value>
+    <comment/>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+    <comment/>
+  </data>
+  <data name="PPAndInfo" xml:space="preserve">
+    <value>Payment Processing and Info</value>
+    <comment/>
+  </data>
+  <data name="PPH1" xml:space="preserve">
+    <value>What is a Privacy Policy and why do we need it?</value>
+    <comment/>
+  </data>
+  <data name="PPH2" xml:space="preserve">
+    <value>A Privacy Policy is a statement or legal document that discloses some or all of the ways a party gathers, uses, discloses and manages a customers or clients data. We need to have a privacy policy for our website and application because it relates to an individual’s ability to determine for themselves when, how and for what purpose their personal information is handled by others. Protecting privacy is key to ensuring human dignity, safety and self-determination. It allows individuals freely develop their own personality.</value>
+    <comment/>
+  </data>
+  <data name="PPQ1" xml:space="preserve">
+    <value>This Privacy Policy will be used for?</value>
+    <comment/>
+  </data>
+  <data name="PPQ10" xml:space="preserve">
+    <value>Sub-City</value>
+    <comment/>
+  </data>
+  <data name="PPQ11" xml:space="preserve">
+    <value>Woreda</value>
+    <comment/>
+  </data>
+  <data name="PPQ12" xml:space="preserve">
+    <value>House Number</value>
+    <comment/>
+  </data>
+  <data name="PPQ13" xml:space="preserve">
+    <value>Do you collect personal information from the user?</value>
+    <comment/>
+  </data>
+  <data name="PPQ14" xml:space="preserve">
+    <value>What type of data do you collect? check all if applicable</value>
+    <comment/>
+  </data>
+  <data name="PPQ15" xml:space="preserve">
+    <value>For what purpose do you use personal Data? </value>
+    <comment/>
+  </data>
+  <data name="PPQ16" xml:space="preserve">
+    <value>Does your website share personal data with third parties? </value>
+    <comment/>
+  </data>
+  <data name="PPQ17" xml:space="preserve">
+    <value>Do your website use cookies?</value>
+    <comment/>
+  </data>
+  <data name="PPQ18" xml:space="preserve">
+    <value>Does your website use remarketing for Advertising? </value>
+    <comment/>
+  </data>
+  <data name="PPQ19" xml:space="preserve">
+    <value>Do you use any digital software for tracking? </value>
+    <comment/>
+  </data>
+  <data name="PPQ2" xml:space="preserve">
+    <value>Website URL</value>
+    <comment/>
+  </data>
+  <data name="PPQ20" xml:space="preserve">
+    <value>Do your website provide other hyperlinks? </value>
+    <comment/>
+  </data>
+  <data name="PPQ21" xml:space="preserve">
+    <value>The Website Audience age? </value>
+    <comment/>
+  </data>
+  <data name="PPQ22" xml:space="preserve">
+    <value>How can users contact you?</value>
+    <comment/>
+  </data>
+  <data name="PPQ23" xml:space="preserve">
+    <value>Choose effective date. </value>
+    <comment/>
+  </data>
+  <data name="PPQ3" xml:space="preserve">
+    <value>Website or App Name </value>
+    <comment/>
+  </data>
+  <data name="PPQ4" xml:space="preserve">
+    <value>The operator of the website or app? </value>
+    <comment/>
+  </data>
+  <data name="PPQ5" xml:space="preserve">
+    <value>Type of Company</value>
+    <comment/>
+  </data>
+  <data name="PPQ6" xml:space="preserve">
+    <value>Name of Business </value>
+    <comment/>
+  </data>
+  <data name="PPQ7" xml:space="preserve">
+    <value>Address of the Business </value>
+    <comment/>
+  </data>
+  <data name="PPQ8" xml:space="preserve">
+    <value>Country</value>
+    <comment/>
+  </data>
+  <data name="PPQ9" xml:space="preserve">
+    <value>Region</value>
+    <comment/>
+  </data>
+  <data name="PPStep1" xml:space="preserve">
+    <value>Click "Generate" on navigation bar</value>
+    <comment/>
+  </data>
+  <data name="PPStep2" xml:space="preserve">
+    <value>Choose "Privacy Policy" in the menu or click a button bellow</value>
+    <comment/>
+  </data>
+  <data name="PPStep3" xml:space="preserve">
+    <value>Fill the forms accordingly and,</value>
+    <comment/>
+  </data>
+  <data name="PPStep4" xml:space="preserve">
+    <value>Finally click Generate</value>
+    <comment/>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment/>
+  </data>
+  <data name="Provide" xml:space="preserve">
+    <value>To provide products &amp; services</value>
+    <comment/>
+  </data>
+  <data name="Research" xml:space="preserve">
+    <value>To perform market research</value>
+    <comment/>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>To run &amp; operate the site</value>
+    <comment/>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>To ensure security</value>
+    <comment/>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+    <comment/>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Select Language</value>
+    <comment/>
+  </data>
+  <data name="SelectTP" xml:space="preserve">
+    <value>Select Third Parties</value>
+    <comment/>
+  </data>
+  <data name="SelectTTT" xml:space="preserve">
+    <value>Select Tracking Tech Types</value>
+    <comment/>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+    <comment/>
+  </data>
+  <data name="Steps" xml:space="preserve">
+    <value>Steps</value>
+    <comment/>
+  </data>
+  <data name="T-CH1" xml:space="preserve">
+    <value>You can generate Terms and Conditions in two languages (English and Amharic). choose your prefered language before filling out the form. also please make sure that your answers are in your prefered language. required fields.</value>
+    <comment/>
+  </data>
+  <data name="T-CH2" xml:space="preserve">
+    <value>The following questions help us generate accurate terms and conditions. please answer them very carefully.</value>
+    <comment/>
+  </data>
+  <data name="T-CStep1" xml:space="preserve">
+    <value>Platform, Business Detail and Address</value>
+    <comment/>
+  </data>
+  <data name="T-CStep2" xml:space="preserve">
+    <value>Services, Account and Contents</value>
+    <comment/>
+  </data>
+  <data name="T-CStep3" xml:space="preserve">
+    <value>Trademarks, Indemnification and Contacts</value>
+    <comment/>
+  </data>
+  <data name="TCH1" xml:space="preserve">
+    <value>What are Terms and Conditions and their use?</value>
+    <comment/>
+  </data>
+  <data name="TCH2" xml:space="preserve">
+    <value>Terms and conditions are the terms of the legal contract between you and your customer for your supply of goods or service, and which regulates your business relationship. They are the condition on which you agree to do business with someone else.</value>
+    <comment/>
+  </data>
+  <data name="TCQ1" xml:space="preserve">
+    <value>These terms and conditions will be used for? </value>
+    <comment/>
+  </data>
+  <data name="TCQ10" xml:space="preserve">
+    <value>What is the service you provide?</value>
+    <comment/>
+  </data>
+  <data name="TCQ11" xml:space="preserve">
+    <value>Can users create accounts?</value>
+    <comment/>
+  </data>
+  <data name="TCQ12" xml:space="preserve">
+    <value>Can users post or share information or upload content?</value>
+    <comment/>
+  </data>
+  <data name="TCQ13" xml:space="preserve">
+    <value>Do you use user’s content?</value>
+    <comment/>
+  </data>
+  <data name="TCQ14" xml:space="preserve">
+    <value>Do you reserve the right to modify or delete users posted content?</value>
+    <comment/>
+  </data>
+  <data name="TCQ15" xml:space="preserve">
+    <value>Do you send newsletters to users?</value>
+    <comment/>
+  </data>
+  <data name="TCQ16" xml:space="preserve">
+    <value>How do you send newsletters? </value>
+    <comment/>
+  </data>
+  <data name="TCQ17" xml:space="preserve">
+    <value>Do your websites provide third-party links?</value>
+    <comment/>
+  </data>
+  <data name="TCQ18" xml:space="preserve">
+    <value>Do you have an age limitation for your users?</value>
+    <comment/>
+  </data>
+  <data name="TCQ19" xml:space="preserve">
+    <value>The Website Audience age? </value>
+    <comment/>
+  </data>
+  <data name="TCQ2" xml:space="preserve">
+    <value>The operator of the website or app? </value>
+    <comment/>
+  </data>
+  <data name="TCQ20" xml:space="preserve">
+    <value>Do users use your website for commercial purposes?</value>
+    <comment/>
+  </data>
+  <data name="TCQ21" xml:space="preserve">
+    <value>Do you want to make it clear that your own content and trademarks are your exclusive property?</value>
+    <comment/>
+  </data>
+  <data name="TCQ22" xml:space="preserve">
+    <value>Do you want to include limitation of liability and indemnification in the terms and conditions?</value>
+    <comment/>
+  </data>
+  <data name="TCQ23" xml:space="preserve">
+    <value>Do you have the right to terminate user accounts?</value>
+    <comment/>
+  </data>
+  <data name="TCQ24" xml:space="preserve">
+    <value>Do you give notice before terminating user accounts??</value>
+    <comment/>
+  </data>
+  <data name="TCQ25" xml:space="preserve">
+    <value>Do you notify your users of the updates to your terms and conditions?</value>
+    <comment/>
+  </data>
+  <data name="TCQ26" xml:space="preserve">
+    <value>How do you notify your users about the updates to these terms and conditions?</value>
+    <comment/>
+  </data>
+  <data name="TCQ27" xml:space="preserve">
+    <value>How can users contact you?</value>
+    <comment/>
+  </data>
+  <data name="TCQ28" xml:space="preserve">
+    <value>Do you send push notifications to users?</value>
+    <comment/>
+  </data>
+  <data name="TCQ3" xml:space="preserve">
+    <value>Type of Company </value>
+    <comment/>
+  </data>
+  <data name="TCQ4" xml:space="preserve">
+    <value>Business Name </value>
+    <comment/>
+  </data>
+  <data name="TCQ5" xml:space="preserve">
+    <value>what is the URL of your website? </value>
+    <comment/>
+  </data>
+  <data name="TCQ6" xml:space="preserve">
+    <value>Name of the website or app </value>
+    <comment/>
+  </data>
+  <data name="TCQ7" xml:space="preserve">
+    <value>Address of the Business</value>
+    <comment/>
+  </data>
+  <data name="TCQ8" xml:space="preserve">
+    <value>Do you have a privacy policy on your website?</value>
+    <comment/>
+  </data>
+  <data name="TCQ9" xml:space="preserve">
+    <value>Put the link to your privacy policy</value>
+    <comment/>
+  </data>
+  <data name="TCStep1" xml:space="preserve">
+    <value>Click on "Generate" on navigation bar</value>
+    <comment/>
+  </data>
+  <data name="TCStep2" xml:space="preserve">
+    <value>Choose "Terms &amp; Conditions" in the menu or click a button bellow</value>
+    <comment/>
+  </data>
+  <data name="TCStep3" xml:space="preserve">
+    <value>Fill the forms accordingly and,</value>
+    <comment/>
+  </data>
+  <data name="TCStep4" xml:space="preserve">
+    <value>Finally click Generate</value>
+    <comment/>
+  </data>
+  <data name="TermsAndCondition" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+    <comment/>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+    <comment>y</comment>
+  </data>
+  <data name="HPTB1" xml:space="preserve">
+    <value>Easy and fast payment with Telebirr</value>
+    <comment/>
+  </data>
+  <data name="HPTB2" xml:space="preserve">
+    <value>Online payment has been integrated with Telebirr. After you finish answering questions you'll be prompted to pay online using Telebirr. you can't download or copy and paste generated documents without payment confirmation.</value>
+    <comment/>
+  </data>
+  <data name="HPTB3" xml:space="preserve">
+    <value>300 ETB / Document</value>
+    <comment/>
+  </data>
+  <data name="TBP1" xml:space="preserve">
+    <value>To download generated document please pay 300ETB using telebirr!</value>
+    <comment/>
+  </data>
+  <data name="TBP2" xml:space="preserve">
+    <value>Telebirr Payment</value>
+    <comment/>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Pay Now</value>
+    <comment/>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment/>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Resume</value>
+    <comment/>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Restart</value>
+    <comment/>
+  </data>
+  <data name="RP1" xml:space="preserve">
+    <value>Do you want to resume your previous answers?</value>
+    <comment/>
+  </data>
+</root>

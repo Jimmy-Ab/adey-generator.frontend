@@ -1,0 +1,522 @@
+﻿@inject IStringLocalizer<Resource> _localizer
+
+
+<div class="cont">
+    <div class="card rz-shadow-1" style="font-size: 16px; min-height: 90vh;">
+        <div id="cont">
+            <div class="d-flex justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    ደንብ እና ግዴታዎች
+                </h4>
+            </div>
+            <div class="justify-content-start mt-2">
+                @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            እንኳን ወደ <strong>@_TCQM.BusinessName</strong> በደህና መጡ። እነዚህ ደንብ እና ግዴታዎች (ስምምነት ወይም ውሎች) በእርስዎ እና <strong>@_TCQM.BusinessName</strong> የድህረ ገፁ ተቆጣጣሪ ወይም አቀናባሪ <strong>@_TCQM.WebsiteName</strong>መካከል ያለ ውል ናቸው። (የሚመለከተው <strong>@_TCQM.WebsiteName</strong>፣ “እኛ”፣ እና “የእኛ” <strong>@_TCQM.BusinessName</strong> ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            እንኳን ወደ <strong>@_TCQM.WebsiteName</strong> በደህና መጡ። እነዚህ ደንብ እና ግዴታዎች (ስምምነት ወይም ውሎች) በእርስዎ እና <strong>@_TCQM.BusinessName</strong> የድህረ ገፁ ተቆጣጣሪ ወይም አቀናባሪ <strong>@_TCQM.WebsiteName</strong>መካከል ያለ ውል ናቸው። (የሚመለከተው <strong>@_TCQM.WebsiteName</strong>፣ “እኛ”፣ እና “የእኛ” <strong>@_TCQM.WebsiteName</strong> ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡
+                        </p>
+                    }
+                }
+                @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            እንኳን ወደ <strong>@_TCQM.WebsiteName</strong> በደህና መጡ። እነዚህ ደንብ እና ግዴታዎች (ስምምነት ወይም ውሎች) በእርስዎ እና <strong>@_TCQM.BusinessName</strong> የመተግበሪያው ተቆጣጣሪ ወይም አቀናባሪ <strong>@_TCQM.WebsiteName</strong>መካከል ያለ ውል ናቸው። (የሚመለከተው <strong>@_TCQM.WebsiteName</strong>፣ “እኛ”፣ እና “የእኛ” <strong>@_TCQM.BusinessName</strong> ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            እንኳን ወደ <strong>@_TCQM.WebsiteName</strong> በደህና መጡ። እነዚህ ደንብ እና ግዴታዎች (ስምምነት ወይም ውሎች) በእርስዎ እና <strong>@_TCQM.BusinessName</strong> የመተግበሪያው ተቆጣጣሪ ወይም አቀናባሪ <strong>@_TCQM.WebsiteName</strong>መካከል ያለ ውል ናቸው። (የሚመለከተው <strong>@_TCQM.WebsiteName</strong>፣ “እኛ”፣ እና “የእኛ” <strong>@_TCQM.WebsiteName</strong> ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡
+                        </p>
+                    }
+                }
+                @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            እንኳን ወደ <strong>@_TCQM.WebsiteName</strong> በደህና መጡ። እነዚህ ደንብ እና ግዴታዎች (ስምምነት ወይም ውሎች) በእርስዎ እና <strong>@_TCQM.BusinessName</strong> የመተግበሪያው እና የድህረ ገፁ ተቆጣጣሪ ወይም አቀናባሪ <strong>@_TCQM.WebsiteName</strong>መካከል ያለ ውል ናቸው። (የሚመለከተው <strong>@_TCQM.WebsiteName</strong>፣ “እኛ”፣ እና “የእኛ” <strong>@_TCQM.BusinessName</strong> ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            እንኳን ወደ <strong>@_TCQM.WebsiteName</strong> በደህና መጡ። እነዚህ ደንብ እና ግዴታዎች (ስምምነት ወይም ውሎች) በእርስዎ እና <strong>@_TCQM.BusinessName</strong> የመተግበሪያው እና የድህረ ገፁ ተቆጣጣሪ ወይም አቀናባሪ <strong>@_TCQM.WebsiteName</strong>መካከል ያለ ውል ናቸው። (የሚመለከተው <strong>@_TCQM.WebsiteName</strong>፣ “እኛ”፣ እና “የእኛ” <strong>@_TCQM.WebsiteName</strong> ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡
+                        </p>
+                    }
+
+                }
+
+
+                <p style="text-align: justify; text-align-last: left;">
+                    ያመለክታሉ እና "እርስዎ" ወይም "የእርስዎ" የአገልግሎቱን ተጠቃሚዎችን ያመለክታሉ፡፡ እነዚህ ደንብዎች የእኛን ድህረ ገፅ እና መተግበሪያ አጠቃቀምዎን ያስተዳደራሉ።
+                    በማንኛውም መልኩ የድረ-ገፁን ወይም መተግበሪያውን ማንኛውንም ክፍል በመድረስ ወይም በመጠቀም፣ ጨምሮ፣ ግን ሳይወሰን፣ ገጹን በመጎብኘት ወይም በማሰስ፣ የሞባይል መተግበሪያዎችን በማውረድ ወይም መለያ (አካውንት) በመመዝገብ፣ እነዚህ ደንብ እና ግዴታዎች በግልፅ አንብበው እንደተረዱት እና እንደተስማሙባቸው ስለሚቆጠር ደንብ እና ግዴታዎች በአግባቡ ማንበብ እና መረዳት አስፈላጊ ነው፡፡ በእነዚህ ደንብ እና ግዴታዎች እና በግላዊነት መመሪያ ካልተስማሙ አገልግሎቱን መጠቀም አይችሉም።
+                    @if (_TCQM.HavePrivacyPolicy)
+                    {
+                        <span>
+                            መረጃን እንዴት እንደምንሰበስብ፣ እንዴት እንደምንጠቀምበት፣ ለምን ዓላማ እንደምንጠቀምበት፣ ለምን ያህል ጊዜ እንደምናቆይ እና ከማን ጋር እንደምናጋራው ማንኛውም ጥያቄ ካለዎት የግላዊነት መመሪያችንን መጎብኘት ይችላሉ <strong> <a href="@_TCQM.PrivacyPolicyLink">እዚህ ይንኩ </a></strong>።
+                        </span>
+                    }
+                    እባክዎ አገልግሎቱን ከመጠቀምዎ በፊት ይህንን ስምምነት በጥንቃቄ ያንብቡ።
+
+                </p>
+
+
+            </div>
+            <div class="justify-content-center mt-2">
+                @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                {
+                    <h4 style="font-size: 25px;"><strong>@_TCQM.WebsiteName</strong> መተግበሪያ ላይ ምን አገልግሎቶች ይገኛሉ?</h4>
+                }
+                @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                {
+                    <h4 style="font-size: 25px;"><strong>@_TCQM.WebsiteName</strong> ድህረገፅ ላይ ምን አገልግሎቶች ይገኛሉ?</h4>
+                }
+                @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                {
+                    <h4 style="font-size: 25px;"><strong>@_TCQM.WebsiteName</strong> ድህረገፅ እና መተግበሪያ ላይ ምን አገልግሎቶች ይገኛሉ?</h4>
+                }
+                <ul>
+                    @foreach (var item in _TCQM.Services)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="justify-content-center mt-2">
+                @if (_TCQM.CreateAccount)
+                {
+                    <h4 style="font-size: 25px;">
+                        የእርስዎ መለያ
+                    </h4>
+                    <ul>
+                        <li>
+                            ድህረ ገጹን እና መተግበሪያውን ለመጠቀም መለያ ሊኖርዎት ይገባል። በመተግበሪያው ላይ መለያ መመዝገብ ይችላሉ። የምዝገባ ሂደቱ የግል መረጃዎን እንዲያቀርቡ ይጠይቃል፡፡
+                        </li>
+                        <li>
+                            በመተግበሪያው ውስጥ ላለ መለያ በመመዝገብ  @_TCQM.Age.Replace(">", "") ዓመት ወይም ከዚያ በላይ መሆንዎን ይወክላሉ እና ዋስትና ይሰጣሉ።
+                        </li>
+                        <li>
+                            ለእኛ የሚያቀርቡልን ሁሉም መረጃዎች ሙሉ፣ ትክክለኛ እና እውነት መሆናቸውን ማረጋገጥ አለቦት። ለምትሰጡን ማንኛውም ያልተሟላ፣ የተሳሳተ ወይም የውሸት መረጃ ተጠያቂ አይደለንም። እና በመረጃዎ ላይ ለውጥ ካለ (የአድራሻ ለውጥ ፣ የሞባይል ቁጥሮች ኢሜል) ስለ ለውጡ ማሳወቅ አለብዎት።
+                        </li>
+                        <li>
+                            የመለያዎ መረጃ ደህንነት ተጥሷል ብለው ካመኑ ወዲያውኑ ያሳውቁን። ያልተፈቀደ የመለያዎን አጠቃቀም ከተጠራጠሩ የይለፍ ቃልዎን ወዲያውኑ ይለውጡ።
+                        </li>
+                        <li>
+                            ለእርስዎ የይለፍ ቃል ደህንነት እና ለማንኛውም የመለያዎ አጠቃቀም፣ በመለያዎ ውስጥ ላለ ማንኛውም የግል መረጃ መዳረሻን ጨምሮ እርስዎ ብቻ ኃላፊነቱን ይወስዳሉ። የይለፍ ቃልዎን የግል ያድርጉት።
+                        </li>
+                        <li>
+                            የእርስዎን የግል መለያ  ለራስዎት ብቻ ይጠቀሙበታል ለሶስተኛ ወገን  የግል መለያዎን አሳልፎ ምስጠት አይቻልም፡፡
+                        </li>
+                        @if (!_TCQM.CommercialPurpose)
+                        {
+                            <li><strong>@_TCQM.WebsiteName</strong> ግለሰቦች ለግል ዓላማቸው የሚጠቀሙበት አገልግሎት ነው። ይዘቱ የተፈቀደው ለግል ዓላማ ብቻ ነው ምንም ለንግድ አገልግሎት ወይም ማንኛውንም ይዘት እንደገና ማሰራጨት አይፈቀድም።</li>
+                        }
+                        ˆ
+                    </ul>
+                }
+                @if (_TCQM.SharePost)
+                {
+
+                    <p style="text-align: justify; text-align-last: left;">
+                        የእኛ ድረ-ገጽ ወይም መተግበሪያ መረጃ ወይም ይዘት እንዲለጥፉ ወይም እንዲያጋሩ ያስችልዎታል።
+                    </p>
+                }
+                @if (_TCQM.UseUsersContent)
+                {
+                    @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            በድረ-ገፃችን ላይ ማንኛውንም መረጃ ወይም ይዘት ከለጠፉ ወይም ካጋሩ እኛን እና ሌሎች ተጠቃሚዎችን ለማሰራጨት፣ ለማባዛት እና ለገበያ እና ለማስተዋወቅ እና ለማንኛውም ህጋዊ ዓላማ ለመጠቀም ፍቃድ ለመስጠት ተስማምተዋል። እና በድረ-ገፃችን ላይ የእርስዎን ልጥፍ የመሰረዝ ወይም የመቀየር መብት አለን።
+                        </p>
+                    }
+                    @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            መተግበሪያችን ላይ ማንኛውንም መረጃ ወይም ይዘት ከለጠፉ ወይም ካጋሩ እኛን እና ሌሎች ተጠቃሚዎችን ለማሰራጨት፣ ለማባዛት እና ለገበያ እና ለማስተዋወቅ እና ለማንኛውም ህጋዊ ዓላማ ለመጠቀም ፍቃድ ለመስጠት ተስማምተዋል። እና በድረ-ገፃችን ላይ የእርስዎን ልጥፍ የመሰረዝ ወይም የመቀየር መብት አለን።
+                        </p>
+                    }
+                    @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            በድረ-ገፃችን ወይም መተግበሪያችን ላይ ማንኛውንም መረጃ ወይም ይዘት ከለጠፉ ወይም ካጋሩ እኛን እና ሌሎች ተጠቃሚዎችን ለማሰራጨት፣ ለማባዛት እና ለገበያ እና ለማስተዋወቅ እና ለማንኛውም ህጋዊ ዓላማ ለመጠቀም ፍቃድ ለመስጠት ተስማምተዋል። እና በድረ-ገፃችን ላይ የእርስዎን ልጥፍ የመሰረዝ ወይም የመቀየር መብት አለን።
+                        </p>
+                    }
+
+
+                }
+
+            </div>
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    የእርስዎ አጠቃቀም
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    ይህን ድህረ ገፅ ወይም መተግበሪያ ሲጠቀሙ @_TCQM.Age.Replace(">", "") አመት ወይም ከዚያ በላይ መሆንዎን ይወክላሉ እና ዋስትና ይሰጣሉ።
+                    ለእኛ የሚያቀርቡልን ሁሉም መረጃዎች ሙሉ፣ ትክክለኛ እና እውነት መሆናቸውን ማረጋገጥ አለቦት። ለምትሰጡን ማንኛውም ያልተሟላ፣ የተሳሳተ ወይም የውሸት መረጃ ተጠያቂ አይደለንም። እና በመረጃዎ ላይ ለውጥ ካለ (የአድራሻ ለውጥ ፣ የሞባይል ቁጥሮች ኢሜል) ስለ ለውጡ ማሳወቅ አለብዎት።
+                    @_TCQM.WebsiteName ግለሰቦች ለግል ዓላማቸው የሚጠቀሙበት አገልግሎት ነው። ይዘቱ የተፈቀደው ለግል ዓላማ ብቻ ነው ምንም ለንግድ አገልግሎት ወይም ማንኛውንም ይዘት እንደገና ማሰራጨት አይፈቀድም።
+                </p>
+
+            </div>
+            @if (_TCQM.SendNewsletters)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        ከእርስዎ ጋር ለመግባባት
+                    </h4>
+                    <p style="text-align: justify; text-align-last: left;">
+                        @if (_TCQM.NewsLetterMethod == "Email" || _TCQM.NewsLetterMethod == "ኢሜይል")
+                        {
+                            <span>
+                                የግላዊነት መመሪያን ወይም ደንብ እና ግዴታዎችን ሲሻሻል እንዲሁም የግብይት መልዕክቶችን ጨምሮ የእኛን ምርቶች እና አገልግሎቶችን በሚመለከቱ ኢሜይሎች ልንልክልዎ እንችላለን፣ከደንበኝነት ምዝገባ ለመውጣትን ከደንበኝነት መሰረዝ የሚለውን በመንካት ከማስተዋወቂያ ኢሜይሎች የመውጣት መብት አልዎት።የግላዊነት መመሪያን ወይም ደንብ እና ግዴታዎችን ሲሻሻል እንዲሁም የግብይት መልዕክቶችን ጨምሮ የእኛን ምርቶች እና አገልግሎቶችን በሚመለከቱ ኢሜይሎች ልንልክልዎ እንችላለን። ከማስተዋወቂያ መልዕክቶች መርጠው የመውጣት መብት አልዎት።
+                            </span>
+                        }
+                        @if (_TCQM.NewsLetterMethod == "Text" || _TCQM.NewsLetterMethod == "መልእክት")
+                        {
+                            <span>
+                                የግላዊነት መመሪያን ወይም ደንብ እና ግዴታዎችን ሲሻሻል እንዲሁም የግብይት መልዕክቶችን ጨምሮ የእኛን ምርቶች እና አገልግሎቶችን በሚመለከቱ መልእክት ልንልክልዎ እንችላለን፣ የግላዊነት መመሪያን ወይም ደንብ እና ግዴታዎችን ሲሻሻል እንዲሁም የግብይት መልዕክቶችን ጨምሮ የእኛን ምርቶች እና አገልግሎቶችን በሚመለከቱ መልእክት ልንልክልዎ እንችላለን። ከማስተዋወቂያ መልዕክቶች መርጠው የመውጣት መብት አልዎት።
+                            </span>
+                        }
+                        @if (_TCQM.NewsLetterMethod == "Both" || _TCQM.NewsLetterMethod == "ሁለቱም")
+                        {
+                            <span>
+                                የግላዊነት መመሪያን ወይም ደንብ እና ግዴታዎችን ሲሻሻል እንዲሁም የግብይት መልዕክቶችን ጨምሮ የእኛን ምርቶች እና አገልግሎቶችን በሚመለከቱ ኢሜይሎች እና መልእክት ልንልክልዎ እንችላለን፣
+                            </span>
+                        }
+                        @if ((_TCQM.Platform != "Website" && _TCQM.Platform != "ድህረገፅ") && _TCQM.SendPushNotifications)
+                        {
+                            <span>
+                                የእኛን መተግበሪያ በሞባይል መሳሪያዎ ላይ ሲጭኑ፣ የግፋ ማሳወቂያዎችን ለመቀበል ሊስማሙ ይችላሉ፣ እነዚህም አፕ በተንቀሳቃሽ መሳሪያዎ ላይ መተግበሪያ በማይበራበት ጊዜ የሚልክልዎ መልዕክቶች ናቸው።
+                            </span>
+                        }
+                    </p>
+
+                </div>
+            }
+
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    የተከለከሉ አጠቃቀሞች
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    ከዚህ በታች በተዘረዘሩት መንገድ ድር ጣቢያውን ወይም መተግበሪያን መጠቀም ክልክል ነው
+                </p>
+                <ul>
+                    <li>
+                        መሳደብ፣ትንኮሳ፣ መጉዳት፣ ስም ማጥፋት ወይም በሌላ መንገድ የሌሎችን ህጋዊ መብቶች መጣስ።
+                    </li>
+                    <li>
+                        ማንኛውንም የሃርድዌር፣ ሶፍትዌር ስራ ለመጉዳት ወይም ለመጥለፍ የታሰበ ማንኛውንም ቫይረስ፣ ስፓይዌር ወይም ሌላ ማንኛውም የኮምፒውተር ኮድ፣ ፋይል ወይም ፕሮግራም ይለጥፉ፣ ያሰራጩ ወይም እንዲገኙ ማድረግ።
+                    </li>
+                    <li>
+                        ድር ጣቢያውን ወይም መተግበሪያውን ሊጎዳ፣ ሊያሰናክል፣ ሸክም ሊጨምር፣ ወይም ሊያበላሽ በሚችል በማንኛውም መልኩ የእኛን ድረ-ገጽ ወይም መተግበሪያ መጠቀም።
+                    </li>
+                    <li>
+                        የውሸት ወይም አሳሳች መረጃ ለመለጠፍ፣ ለመስቀል ወይም ለመፃፍ።
+                    </li>
+                    <li>
+                        በማንኛውም መንገድ የሚመለከታቸውን ህጎች ወይም ደንቦች መጣስ።
+                    </li>
+                    <li>
+                        ሌላ ማንኛውም ሰው በምዝገባዎ ወይም በመግቢያ መረጃዎ መተግበሪያውን እንዲጠቀም መፍቀድ።
+                    </li>
+                    <li>
+                        መተግበሪያውን ለመጠቀም ወይም ለመድረስ ማንኛውንም አውቶማቲክ ሂደት ወይም አገልግሎት መጠቀም።
+                    </li>
+                    <li>
+                        ድህረ ገጹን ወይም መተግበሪያን ለማንኛውም ህገወጥ ዓላማ መጠቀም።
+                    </li>
+                    <li>
+                        ማንኛውም ሰው ከላይ በተገለጹት ተግባራት ውስጥ እንዲሳተፍ መፍቀድ።
+                    </li>
+                </ul>
+            </div>
+            @if (_TCQM.ThirdPartyLinks)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        የሶስተኛ ወገን ይዘት
+                    </h4>
+                    <p style="text-align: justify; text-align-last: left;">
+                        የእኛ ድረ-ገጽ የሶስተኛ ወገኖች ውጫዊ ድር አገናኞችን ሊይዝ ይችላል፣ በነዚህ ድር ጣቢያዎች ላይ የሚለቀቁ ማናቸውም ነገሮች በኛ ቁጥጥር ስር አደሉም። ስለዚህ ምንም ዓይነት ኃላፊነት አንወስድም፡፡. ድር ጣቢያዎች አቅራቢ ወይም ኦፕሬተር ሁል ጊዜ ለተገናኙት ገፆች ይዘት ተጠያቂ ናቸው። ገፅቹን እኛ ድረገጽ ላይ ከመለቀቃቸው በፊት ህጋዊነታቸውን እናረጋግጣለን፡፡ ማንናኛውም ህገወጥ ጥሰቶች እንዳሉ ካወቅን ወዲያውኑ የሰረዛሉ፡፡
+                    </p>
+                </div>
+            }
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    የአእምሯዊ ንብረት መብቶች እና ይዘቶች
+                </h4>
+                @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            ድህረገፁን መጠቀምዎ የአእምሮአዊ ንብረት መብት አይሰጥዎትም። ከድህረገፁ ማንኛውንም ነገር ማባዛት ወይም መጠቀም አልተፈቀደልዎትም። ይዘቱ፣ የሎጎስ ሥዕሎች፣ ግራፊክስ፣ የንግድ ምልክት እና ድህረገፁን ጨምሮ ሁሉም <strong>የ@_TCQM.BusinessName</strong> ንብረት ናቸው።
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            ድህረገፁን መጠቀምዎ የአእምሮአዊ ንብረት መብት አይሰጥዎትም። ከድህረገፁ ማንኛውንም ነገር ማባዛት ወይም መጠቀም አልተፈቀደልዎትም። ይዘቱ፣ የሎጎስ ሥዕሎች፣ ግራፊክስ፣ የንግድ ምልክት እና ድህረገፁን ጨምሮ ሁሉም <strong>የ@_TCQM.WebsiteName</strong> ንብረት ናቸው።
+                        </p>
+                    }
+
+                }
+                @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            መተግበሪያውን መጠቀምዎ የአእምሮአዊ ንብረት መብት አይሰጥዎትም። ከመተግበሪያችን ማንኛውንም ነገር ማባዛት ወይም መጠቀም አልተፈቀደልዎትም። ይዘቱ፣ የሎጎስ ሥዕሎች፣ ግራፊክስ፣ የንግድ ምልክት እና መተግበሪያው ጨምሮ ሁሉም <strong>የ@_TCQM.BusinessName</strong> ንብረት ናቸው።
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            መተግበሪያውን መጠቀምዎ የአእምሮአዊ ንብረት መብት አይሰጥዎትም። ከመተግበሪያችን ማንኛውንም ነገር ማባዛት ወይም መጠቀም አልተፈቀደልዎትም። ይዘቱ፣ የሎጎስ ሥዕሎች፣ ግራፊክስ፣ የንግድ ምልክት እና መተግበሪያው ጨምሮ ሁሉም <strong>የ@_TCQM.WebsiteName</strong> ንብረት ናቸው።
+                        </p>
+                    }
+                }
+                @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            መተግበሪያውን ወይም የድር ጣቢያውን መጠቀምዎ የአእምሮአዊ ንብረት መብት አይሰጥዎትም። ከድህረገፅ ወይም መተግበሪያችን ማንኛውንም ነገር ማባዛት ወይም መጠቀም አልተፈቀደልዎትም። ይዘቱ፣ የሎጎስ ሥዕሎች፣ ግራፊክስ፣ የንግድ ምልክት እና መተግበሪያው ጨምሮ ሁሉም <strong>የ@_TCQM.BusinessName</strong> ንብረት ናቸው።
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            መተግበሪያውን ወይም የድር ጣቢያውን መጠቀምዎ የአእምሮአዊ ንብረት መብት አይሰጥዎትም። ከድህረገፅ ወይም መተግበሪያችን ማንኛውንም ነገር ማባዛት ወይም መጠቀም አልተፈቀደልዎትም። ይዘቱ፣ የሎጎስ ሥዕሎች፣ ግራፊክስ፣ የንግድ ምልክት እና መተግበሪያው ጨምሮ ሁሉም <strong>የ@_TCQM.WebsiteName</strong> ንብረት ናቸው።
+                        </p>
+                    }
+                }
+            </div>
+            @if (_TCQM.LiabilityLimitation)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        የተጠያቂነት ገደብ
+                    </h4>
+                    @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            ከድህረገፁ የሚመጣ ጉዳት፣ የይገባኛል ጥያቄ ወይም ኪሳራ አግባብነት ባለው ህግ በሚፈቅደው መጠን እኛ፣ አጋሮቻችን፣ ሰራተኞቻችን፣ አቅራቢዎቻችን የዚህን ስምምነት ርዕሰ ጉዳይ እና ማንኛውንም ውል፣ ከውል ውጪ ለሚመጣ ወይም ለሌላ ተጠያቂነት ፅንሰ-ሀሳብን ለማንኛውም ሰው ተጠያቂ አንሆንም።
+                            እኛ ተጠያቂ የምንሆነው በእኛ ወይም በሰራተኞቻችን ከባድ ቸልተኝነት ወይም ጥፋት ለሚደርስ ቀጥተኛ ኪሳራ ወይም ጉዳት ብቻ ነው።
+                        </p>
+                    }
+                    @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            ከመተግበሪያው የሚመጣ ጉዳት፣ የይገባኛል ጥያቄ ወይም ኪሳራ አግባብነት ባለው ህግ በሚፈቅደው መጠን እኛ፣ አጋሮቻችን፣ ሰራተኞቻችን፣ አቅራቢዎቻችን የዚህን ስምምነት ርዕሰ ጉዳይ እና ማንኛውንም ውል፣ ከውል ውጪ ለሚመጣ ወይም ለሌላ ተጠያቂነት ፅንሰ-ሀሳብን ለማንኛውም ሰው ተጠያቂ አንሆንም።
+                            እኛ ተጠያቂ የምንሆነው በእኛ ወይም በሰራተኞቻችን ከባድ ቸልተኝነት ወይም ጥፋት ለሚደርስ ቀጥተኛ ኪሳራ ወይም ጉዳት ብቻ ነው።
+                        </p>
+                    }
+                    @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            ከድህረገፁ ወይም ከመተግበሪያው የሚመጣ ጉዳት፣ የይገባኛል ጥያቄ ወይም ኪሳራ አግባብነት ባለው ህግ በሚፈቅደው መጠን እኛ፣ አጋሮቻችን፣ ሰራተኞቻችን፣ አቅራቢዎቻችን የዚህን ስምምነት ርዕሰ ጉዳይ እና ማንኛውንም ውል፣ ከውል ውጪ ለሚመጣ ወይም ለሌላ ተጠያቂነት ፅንሰ-ሀሳብን ለማንኛውም ሰው ተጠያቂ አንሆንም።
+                            እኛ ተጠያቂ የምንሆነው በእኛ ወይም በሰራተኞቻችን ከባድ ቸልተኝነት ወይም ጥፋት ለሚደርስ ቀጥተኛ ኪሳራ ወይም ጉዳት ብቻ ነው።
+                        </p>
+                    }
+
+                </div>
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        የካሳ ክፍያ
+                    </h4>
+                    <p style="text-align: justify; text-align-last: left;">
+                        ከታች በተዘረዘሩት ምክንያቶች ለሚመጡ ማንኛውም አይነት የይገባኛል ጥያቄዎች፣ ጉዳቶች፣ ኪሳራዎች፣ ወይም የፍርድ ቤት ወጪዎች እና የጠበቃ ክፍያዎችን ጨምሮ ከማንኛውም ተጠያቂነት እኛን፣ አጋሮቻችንን፣ ሰራተኞቻችንን፣ አቅራቢዎቻችንን   ለመከላከል ተስማምተዋል።
+                    </p>
+                    <ul>
+                        <li>የዚህ ስምምነት ማንኛውም መጣስ።</li>
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <li>እርስዎ በሚለጥፉት፣ በሚያትሙት፣ በሚሰቀሉት ወይም በድህረገፁ በኩል እንዲገኝ ያደረጉት ማንኛውም ይዘት።</li>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <li>እርስዎ በሚለጥፉት፣ በሚያትሙት፣ በሚሰቀሉት ወይም በመተግበሪያ በኩል እንዲገኝ ያደረጉት ማንኛውም ይዘት።</li>
+
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <li>እርስዎ በሚለጥፉት፣ በሚያትሙት፣ በሚሰቀሉት ወይም በድር ጣቢያው እና መተግበሪያ በኩል እንዲገኝ ያደረጉት ማንኛውም ይዘት።</li>
+
+                        }
+                        <li>
+                            ማንኛውም የእኛን ድረ-ገጽ ወይም መተግበሪያ በመጠቀም።
+                        </li>
+                    </ul>
+                </div>
+            }
+
+            @if (_TCQM.TerminateAccounts)
+            {
+
+
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        መቋረጥ
+                    </h4>
+                    @if (_TCQM.NoticeTermination)
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                ቅድመ ማስጠንቀቂያ በመስጠት በማንኛውም ጊዜ የእርስዎን ድህረገፅ መለያን (መጠቀም) በሙሉ ወይም በከፊል የማቋረጥ መብት አለን። ለድህረገፆ መለያ ለማንኛውም መቋረጥ ወይም እገዳ ተጠያቂ አንሆንም።
+                                ይህንን ስምምነት በቀላሉ ድህረገፁን ባለመጠቀም (ኢሜል በመላክ) ማቋረጥ ይችላሉ።
+                            </p>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                ቅድመ ማስጠንቀቂያ በመስጠት በማንኛውም ጊዜ የእርስዎን መተግበሪያ መለያን (መጠቀም) በሙሉ ወይም በከፊል የማቋረጥ መብት አለን። መተግበሪያዎ መለያ ለማንኛውም መቋረጥ ወይም እገዳ ተጠያቂ አንሆንም።
+                                ይህንን ስምምነት በቀላሉ መተግበሪያን ባለመጠቀም (ኢሜል በመላክ) ማቋረጥ ይችላሉ።
+                            </p>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                ቅድመ ማስጠንቀቂያ በመስጠት በማንኛውም ጊዜ የእርስዎን ድህረገፅ  ወይም መተግበሪያ መለያን (መጠቀም) በሙሉ ወይም በከፊል የማቋረጥ መብት አለን። ለድህረገፆ ወይም መተግበሪያዎ መለያ ለማንኛውም መቋረጥ ወይም እገዳ ተጠያቂ አንሆንም።
+                                ይህንን ስምምነት በቀላሉ ድህረገፁን ወይም መተግበሪያን ባለመጠቀም (ኢሜል በመላክ) ማቋረጥ ይችላሉ።
+                            </p>
+                        }
+
+                    }
+                    else
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                ያለ ምንም ቅድመ ማስጠንቀቂያ በማንኛውም ጊዜ የእርስዎን ድህረገፅ መለያን (መጠቀም) በሙሉ ወይም በከፊል የማቋረጥ መብት አለን። ለድህረገፆ መለያ ለማንኛውም መቋረጥ ወይም እገዳ ተጠያቂ አንሆንም።
+                                ይህንን ስምምነት በቀላሉ ድህረገፁን ባለመጠቀም (ኢሜል በመላክ) ማቋረጥ ይችላሉ።
+                            </p>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                ያለ ምንም ቅድመ ማስጠንቀቂያ በማንኛውም ጊዜ የእርስዎን መተግበሪያ መለያን (መጠቀም) በሙሉ ወይም በከፊል የማቋረጥ መብት አለን። ለመተግበሪያዎ መለያ ለማንኛውም መቋረጥ ወይም እገዳ ተጠያቂ አንሆንም።
+                                ይህንን ስምምነት በቀላሉ መተግበሪያን ባለመጠቀም (ኢሜል በመላክ) ማቋረጥ ይችላሉ።
+                            </p>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                ያለ ምንም ቅድመ ማስጠንቀቂያ በማንኛውም ጊዜ የእርስዎን ድህረገፅ  ወይም መተግበሪያ መለያን (መጠቀም) በሙሉ ወይም በከፊል የማቋረጥ መብት አለን። ለድህረገፆ ወይም መተግበሪያዎ መለያ ለማንኛውም መቋረጥ ወይም እገዳ ተጠያቂ አንሆንም።
+                                ይህንን ስምምነት በቀላሉ ድህረገፁን ወይም መተግበሪያን ባለመጠቀም (ኢሜል በመላክ) ማቋረጥ ይችላሉ።
+                            </p>
+                        }
+                    }
+
+                </div>
+            }
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    ምደባ
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    መብታችንን ወይም ግዴታችንን በሙሉ ወይም በከፊል ለማንኛውም ሶስተኛ ወገን የመመደብ መብታችን የተጠበቀ ነው። የመሸጥ እና የመቀላቀል መብት አለን።
+                </p>
+            </div>
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    የአስተዳደር ህግ እና ስልጣን
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    ግንኙነታችን የሚመራው በእነዚህ ደንብ እና ግዴታዎች ነው። ከእነዚህ ደንብ እና ግዴታዎች  መካከል አንዱ ድንጋጌ ተቀባይነት የሌለው ወይም ተፈጻሚ መሆን ባይችል ቀሪው ድንጋጌ ውጤታማ ይሆናል ወይም ጸንቶ ይቆያል። በዚህ ስምምነት የሚነሳ ማንኛውም አይነት አለመግባባት በኢትዮጵያ ህግ ነው የሚታየወ። <strong>በ@_TCQM.WebsiteName</strong> ስር የሚነሳ ማንኛውም አለመግባባት ወይም የይገባኛል ጥያቄ በመጀመሪያ በወዳጅነት ድርድር ወይም በግልግል ይፈታል።
+                </p>
+            </div>
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    ደንብ እና ግዴታዎች ላይ የተደረጉ ለውጦች
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    ይህንን ስምምነት በማንኛውም ጊዜ የማሻሻል ወይም የመቀየር መብት አለን። ይህን ስምምነት ካስተካከልን ወይም ከቀየርነው አዲሱ ስምምነት ተግባራዊ ከመሆኑ በፊት
+                    @if (_TCQM.TermsAndUpdateMethod == "Email" || _TCQM.TermsAndUpdateMethod == "ኢሜይል")
+                    {
+                        <span>በኢሜል እናሳውቅዎታለን</span>
+                    }
+                    @if (_TCQM.TermsAndUpdateMethod == "Post Notification" || _TCQM.TermsAndUpdateMethod == "የግፋ ማሳወቂያዎች")
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <span>በድህረገፁ ላይ በመለጠፍ እናሳውቅዎታለን</span>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <span>በመተግበሪያዉ ላይ በመለጠፍ እናሳውቅዎታለን</span>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <span>በድህረገፁ እና መተግበሪያዉ ላይ በመለጠፍ እናሳውቅዎታለን</span>
+                        }
+                    }
+
+                    @if (_TCQM.TermsAndUpdateMethod == "Both" || _TCQM.TermsAndUpdateMethod == "ሁለቱም")
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <span>በድህረገፁ ላይ በኢሜል እና በመለጠፍ እናሳውቅዎታለን</span>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <span>በመተግበሪያዉ ላይ በኢሜል እና በመለጠፍ እናሳውቅዎታለን</span>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <span>በድህረገፁ እና መተግበሪያዉ ላይ በኢሜል እና በመለጠፍ እናሳውቅዎታለን</span>
+                        }
+                    }
+                </p>
+                <h4 style="font-size: 25px;">
+                    እኛን ለማነጋገር
+                </h4>
+                @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                {
+                    <p>@_TCQM.BusinessName</p>
+                }
+                else
+                {
+                    <p>@_TCQM.WebsiteName</p>
+
+                }
+                <p> @_TCQM.Address.Subcity ክፍለ ከተማ ወረዳ @_TCQM.Address.Woreda</p>
+                <p>የቤት ቁጥር @_TCQM.Address.HouseNumber</p>
+                <p> @_TCQM.Address.Region፤ @_TCQM.Address.Country</p>
+                <p></p>
+                @if (_TCQM.PhoneNumber != null)
+                {
+                    <p>ስልክ:- <a href="tel:@_TCQM.PhoneNumber">@_TCQM.PhoneNumber</a></p>
+                }
+                @if (_TCQM.Email != null)
+                {
+                    <p>ኢሜል: <a href="mailto:@_TCQM.Email">@_TCQM.Email</a></p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 row">
+
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Class="w-100" Click="OnChangeAnswerCliked" Icon="arrow_back_ios" Text="@_localizer["Back"]" />
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Click="OnDownloadClicked" Class="w-100" Icon="download" Text="@_localizer["Download"]" />
+        </div>
+
+    </div>
+</div>
+

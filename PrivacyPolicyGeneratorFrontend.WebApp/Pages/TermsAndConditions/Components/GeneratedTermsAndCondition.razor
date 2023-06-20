@@ -1,0 +1,427 @@
+﻿@inject IStringLocalizer<Resource> _localizer
+
+<div class="cont">
+    <div class="card rz-shadow-1" style="font-size: 16px; min-height: 90vh;">
+        <div id="cont">
+            <div class="d-flex justify-content-center mt-2">
+                <h4 style="font-size: 25px;">Terms and Conditions</h4>
+            </div>
+            <div class="justify-content-start mt-2">
+                @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                {
+
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Welcome to <strong>@_TCQM.BusinessName</strong>. Th ese terms and conditions (agreement or terms) are a contract between you and <strong>@_TCQM.BusinessName</strong> as operators of the site. (Where applicable <strong>@_TCQM.WebsiteName</strong>, “we”, “us”, and “our” shall refer to <strong>@_TCQM.BusinessName</strong> and “you” or “your” shall refer to users of the service. These terms govern your use of our site.
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Welcome to <strong>@_TCQM.WebsiteName</strong>. These terms and conditions (agreement or terms) are a contract between you and <strong>@_TCQM.WebsiteName</strong> as operators of the site. (Where applicable <strong>@_TCQM.WebsiteName</strong>, “we”, “us”, and “our” shall refer to <strong>@_TCQM.WebsiteName</strong> and “you” or “your” shall refer to users of the service. These terms govern your use of our site.
+                        </p>
+                    }
+                }
+                @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                {
+                    <p style="text-align: justify; text-align-last: left;">
+                        Welcome to <strong>@_TCQM.WebsiteName</strong>. These terms and conditions (agreement or terms) are a contract between you and <strong>@_TCQM.BusinessName</strong> as operators of the app . (Where applicable <strong>@_TCQM.WebsiteName</strong>, “we”, “us”, and “our” shall refer to <strong>@_TCQM.BusinessName</strong> and “you” or “your” shall refer to users of the service. These terms govern your use of our app.
+                    </p>
+                }
+                @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                {
+                    <p style="text-align: justify; text-align-last: left;">
+                        Welcome to <strong>@_TCQM.WebsiteName</strong>. These terms and conditions (agreement or terms) are a contract between you and <strong>@_TCQM.BusinessName</strong> as operators of the app and site. (Where applicable <strong>@_TCQM.WebsiteName</strong>, “we”, “us”, and “our” shall refer to <strong>@_TCQM.BusinessName</strong> and “you” or “your” shall refer to users of the service. These terms govern your use of our site and app.
+                    </p>
+                }
+
+
+                <p style="text-align: justify; text-align-last: left;">
+                    By accessing or using any part of the website or app in any manner, including, but not limited to, visiting or browsing the site, downloading the mobile apps, or registering an account, you expressly understand and agree that you have read and understood the terms and agree to be bound by this terms and conditions. If you do not agree to all the terms and conditions of this agreement and the privacy policy, then you are not authorized to use the service.
+                    @if (_TCQM.HavePrivacyPolicy)
+                    {
+                        <span>If you have any questions about how we collect data, how we use it, for what purpose we use it, how long we keep it, and with who we share it you can visit our privacy policy<strong> <a href="@_TCQM.PrivacyPolicyLink"> Here </a></strong>.</span>
+                    }
+                    Please read this agreement carefully before using the service.
+
+                </p>
+
+
+            </div>
+            <div class="justify-content-center mt-2">
+                @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                {
+                    <h4 style="font-size: 25px;">What Services are available in <strong>@_TCQM.WebsiteName</strong> app?</h4>
+                }
+                @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                {
+                    <h4 style="font-size: 25px;">What Services are available on <strong>@_TCQM.WebsiteName</strong> website?</h4>
+                }
+                @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                {
+                    <h4 style="font-size: 25px;">What Services are available on <strong>@_TCQM.WebsiteName</strong> website and app?</h4>
+                }
+                <ul>
+                    @foreach (var item in _TCQM.Services)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="justify-content-center mt-2">
+                @if (_TCQM.CreateAccount)
+                {
+                    <h4 style="font-size: 25px;">
+                        Your account
+                    </h4>
+                    <ul>
+                        <li>You will need to have an account in order to access the website and app. you may sign up for an account on the app. The registration process requires you to provide your personal information.</li>
+                        <li>By signing up for an account in the app, you represent and guarantee that you are @_TCQM.Age.Replace(">", "") years old or above.</li>
+                        <li>You have to make sure all information and data you provide to us is complete, accurate, and true. We are not responsible for any incomplete, inaccurate, or false information you provide to us. And if there is any change in your data (change of address, mobile numbers Email) you should update us about the change.</li>
+                        <li>If you believe that the security of your account information has been compromised, you shall notify us immediately. If you suspect unauthorized use of your account, change your password immediately.</li>
+                        <li>You are solely responsible for the security of your password and for any use of your account, including any access to personal information in your account. Keep your password private.</li>
+                        <li>You will use your account only for your personal use allowing any other person or entity to use your identity using <strong>@_TCQM.WebsiteName</strong> is not permitted.</li>
+                        @if (!_TCQM.CommercialPurpose)
+                        {
+                            <li><strong>@_TCQM.WebsiteName</strong> is a service for individuals to use for their personal purpose. The content is licensed only for personal purposes no commercial use commercial or redistribution of any content is permitted.</li>
+                        }
+                        ˆ
+                    </ul>
+                }
+                @if (_TCQM.SharePost)
+                {
+
+                    <p style="text-align: justify; text-align-last: left;">
+                        Our website or app allows you to post or share information or content.
+                    </p>
+                }
+                @if (_TCQM.UseUsersContent)
+                {
+
+                    <p style="text-align: justify; text-align-last: left;">
+                        If you post or share any information or content on our website or app you agree to give us and other users the license to distribute, reproduce, and use for marketing and promotional purpose and for any lawful purpose. And we have the right to delete or modify your post on our website.
+                    </p>
+                }
+
+            </div>
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    Your use
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    By using the website or app you represent and guarantee that you are @_TCQM.Age.Replace(">", "") years old or above.
+                    You have to make sure all information and data you provide to us is complete, accurate, and true. We are not responsible for any incomplete, inaccurate, or false information you provide to us. And if there is any change in your data (change of address, mobile numbers Email) you should update us about the change.
+                    @_TCQM.WebsiteName is a service for individuals to use for their personal purpose. The content is licensed only for personal purposes no commercial use commercial or redistribution of any content is permitted.
+                </p>
+            </div>
+            @if (_TCQM.SendNewsletters)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">Communicate with you</h4>
+                    <p style="text-align: justify; text-align-last: left;">
+                        @if (_TCQM.NewsLetterMethod == "Email" || _TCQM.NewsLetterMethod == "ኢሜይል")
+                        {
+                            <span>We may send you emails concerning our products and service including updates of a privacy policy or terms and conditions as well as marketing messages, you have the right to opt out of promotional emails by clicking unsubscribe.</span>
+                        }
+                        @if (_TCQM.NewsLetterMethod == "Text" || _TCQM.NewsLetterMethod == "መልእክት")
+                        {
+                            <span>We may send you text (SMS) messages these messages may include updates of a privacy policy or terms and conditions as well as marketing messages. You have the right to opt out of promotional messages.</span>
+                        }
+                        @if (_TCQM.NewsLetterMethod == "Both" || _TCQM.NewsLetterMethod == "ሁለቱም")
+                        {
+                            <span>We may send you Email or text (SMS) messages these messages may include updates of a privacy policy or terms and conditions as well as marketing messages. You have the right to opt out of promotional messages.</span>
+                        }
+                        @if ((_TCQM.Platform != "Website" && _TCQM.Platform != "ድህረገፅ") && _TCQM.SendPushNotifications)
+                        {
+                            <span>
+                                When you install our app on your device, you may agree to receive push notifications, which are messages an app sends to you on your mobile device when the app is not on.
+                            </span>
+                        }
+                    </p>
+
+                </div>
+            }
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;"> Prohibited uses</h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    You are prohibited from using the website or app
+                </p>
+                <ul>
+                    <li>To harass, abuse, insult, harm, defame or otherwise violate the legal rights of others.</li>
+                    <li>Post, transmit, or otherwise make available any virus, spyware, or any other computer code, file, or program that may or is intended to damage or hijack the operation of any hardware, software ;</li>
+                    <li>Use our website or app in any manner that could impair, disable, overburden, damage, or compromise the website or app.</li>
+                    <li>To post, upload or write false or misleading information.</li>
+                    <li>Violate any applicable laws or regulations in any way;</li>
+                    <li>Allow any other person to use the app with your registration or login information;</li>
+                    <li>Use any automated process or service to use or access the app;</li>
+                    <li>Use the website or app for any unlawful purpose;</li>
+                    <li>Permit any persons in engaging in any of the activities described above.</li>
+                </ul>
+            </div>
+            @if (_TCQM.ThirdPartyLinks)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">Third-party content</h4>
+                    <p style="text-align: justify; text-align-last: left;">
+                        Our website or app may contain links to external apps or websites of third parties you may access the links, the contents on these links are beyond our control. Therefore, we are not liable for these external contents. The respective provider or operator of the apps or pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal contents were not recognizable at the time of linking. If we become aware of any infringements such links will be removed immediately.
+                    </p>
+                </div>
+            }
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    Intellectual property rights and content
+                </h4>
+                @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Your use of the website does not give you the right to intellectual property. You are not allowed to reproduce or use any material from our website. All the materials, including the content, logos pictures, graphics, trademark, and website are the property of <strong>@_TCQM.BusinessName</strong>.
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Your use of the website does not give you the right to intellectual property. You are not allowed to reproduce or use any material from our website. All the materials, including the content, logos pictures, graphics, trademark, and website are the property of <strong>@_TCQM.WebsiteName</strong>.
+                        </p>
+                    }
+
+                }
+                @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Your use of the app does not give you the right to intellectual property. You are not allowed to reproduce or use any material from our app. All the materials, including the content, logos pictures, graphics, trademark, and app are the property of <strong>@_TCQM.BusinessName</strong>.
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Your use of the app does not give you the right to intellectual property. You are not allowed to reproduce or use any material from our app. All the materials, including the content, logos pictures, graphics, trademark, and app are the property of <strong>@_TCQM.WebsiteName</strong>.
+                        </p>
+                    }
+                }
+                @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                {
+                    @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Your use of the website and app does not give you the right to intellectual property. You are not allowed to reproduce or use any material from our website and app. All the materials, including the content, logos pictures, graphics, trademark, website and app are the property of <strong>@_TCQM.BusinessName</strong>.
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            Your use of the website and app does not give you the right to intellectual property. You are not allowed to reproduce or use any material from our website and app. All the materials, including the content, logos pictures, graphics, trademark, website and app are the property of <strong>@_TCQM.WebsiteName</strong>.
+                        </p>
+                    }
+                }
+
+            </div>
+            @if (_TCQM.LiabilityLimitation)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        Limitation of liability
+                    </h4>
+                    @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            To the maximum extent allowed under applicable law we, our affiliates, employees, suppliers, and partners will not be liable to any person concerning any subject matter of this agreement and any contract, tort, or other liability theory for any indirect, incidental, consequential damage, claim, or loss arising out of the website.
+                            We will be liable only for direct losses or damage caused by us or our employees’ gross negligence or fault.
+                        </p>
+                    }
+                    @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            To the maximum extent allowed under applicable law we, our affiliates, employees, suppliers, and partners will not be liable to any person concerning any subject matter of this agreement and any contract, tort, or other liability theory for any indirect, incidental, consequential damage, claim, or loss arising out of the app.
+                            We will be liable only for direct losses or damage caused by us or our employees’ gross negligence or fault.
+                        </p>
+                    }
+                    @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">
+                            To the maximum extent allowed under applicable law we, our affiliates, employees, suppliers, and partners will not be liable to any person concerning any subject matter of this agreement and any contract, tort, or other liability theory for any indirect, incidental, consequential damage, claim, or loss arising out of the website or app.
+                            We will be liable only for direct losses or damage caused by us or our employees’ gross negligence or fault.
+                        </p>
+                    }
+
+                </div>
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        Indemnification
+                    </h4>
+                    <p style="text-align: justify; text-align-last: left;">
+                        You agree to indemnify and hold harmless and defend us, our affiliates, employees, suppliers, and partners from and against all claims, damage, injuries, loss, or any liability including court costs and attorney’s fees arising out of
+                    </p>
+                    <ul>
+                        <li>Any breach of this agreement</li>
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <li>Any content which you post, publish, upload, or make available through the website.</li>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <li>Any content which you post, publish, upload, or make available through the app.</li>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <li>Any content which you post, publish, upload, or make available through the website and app.</li>
+                        }
+                        <li>Any use of our website or app.</li>
+                    </ul>
+                </div>
+            }
+
+            @if (_TCQM.TerminateAccounts)
+            {
+                <div class="justify-content-center mt-2">
+                    <h4 style="font-size: 25px;">
+                        Termination
+                    </h4>
+                    @if (_TCQM.NoticeTermination)
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                We have the right to terminate your account (your access) to all or any part of the website or app at any time with any prior notice. We will not be liable for any termination or suspension of your access to the website or app.
+                                You can terminate this agreement simply by discounting using (sending an email to us) the website.
+                            </p>}
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                We have the right to terminate your account (your access) to all or any part of the website or app at any time with any prior notice. We will not be liable for any termination or suspension of your access to the website or app.
+                                You can terminate this agreement simply by discounting using (sending an email to us) the app.
+                            </p>}
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                We have the right to terminate your account (your access) to all or any part of the website or app at any time with any prior notice. We will not be liable for any termination or suspension of your access to the website or app.
+                                You can terminate this agreement simply by discounting using (sending an email to us) the website or app.
+                            </p>
+                        }
+
+                    }
+                    else
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                We have the right to terminate your account (your access) to all or any part of the website or app at any time without any prior notice. We will not be liable for any termination or suspension of your access to the website or app.
+                                You can terminate this agreement simply by discounting using (sending an email to us) the website.
+                            </p>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                We have the right to terminate your account (your access) to all or any part of the website or app at any time without any prior notice. We will not be liable for any termination or suspension of your access to the website or app.
+                                You can terminate this agreement simply by discounting using (sending an email to us) the app.
+                            </p>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <p style="text-align: justify; text-align-last: left;">
+                                We have the right to terminate your account (your access) to all or any part of the website or app at any time without any prior notice. We will not be liable for any termination or suspension of your access to the website or app.
+                                You can terminate this agreement simply by discounting using (sending an email to us) the website or app.
+                            </p>
+                        }
+
+                    }
+
+                </div>
+            }
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    Assignment
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    We reserve the right to assign any of our rights or obligation, in whole or in part to any third party. We have the right to sale and merge.
+                </p>
+            </div>
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    Governing law and Jurisdiction
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    Our relations are governed by these terms and conditions. If any provision of this agreement is invalid or illegal the remaining provision shall be effective or remain valid. Any kind of dispute arising out of this agreement shall be governed by Ethiopian law. Any dispute or claim arising under or concerning <strong>@_TCQM.WebsiteName</strong> will be resolved by friendly negotiations or arbitrations first.
+                </p>
+            </div>
+            <div class="justify-content-center mt-2">
+                <h4 style="font-size: 25px;">
+                    Changes to the terms and conditions
+                </h4>
+                <p style="text-align: justify; text-align-last: left;">
+                    We have the right to modify or change this agreement at any time. If we do modify or change this agreement we will notify you before the new agreement becomes effective.
+                    @if (_TCQM.TermsAndUpdateMethod == "Email" || _TCQM.TermsAndUpdateMethod == "ኢሜይል")
+                    {
+                        <span>We will notify you through email.</span>
+                    }
+                    @if (_TCQM.TermsAndUpdateMethod == "Post Notification" || _TCQM.TermsAndUpdateMethod == "የግፋ ማሳወቂያዎች")
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <span>We will notify you through post on the website.</span>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <span>We will notify you through post on the app.</span>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <span>We will notify you through post on the website.</span>
+                        }
+                    }
+
+                    @if (_TCQM.TermsAndUpdateMethod == "Both" || _TCQM.TermsAndUpdateMethod == "ሁለቱም")
+                    {
+                        @if (_TCQM.Platform == "Website" || _TCQM.Platform == "ድህረገፅ")
+                        {
+                            <span>We will notify you through email and post on the website.</span>
+                        }
+                        @if (_TCQM.Platform == "Application" || _TCQM.Platform == "መተግበሪያ")
+                        {
+                            <span>We will notify you through email and post on the app.</span>
+                        }
+                        @if (_TCQM.Platform == "Both" || _TCQM.Platform == "ሁለቱም")
+                        {
+                            <span>We will notify you through email and post on the website and app.</span>
+                        }
+                    }
+                </p>
+                <h4 style="font-size: 25px;">
+                    contacting us
+                </h4>
+                @if (_TCQM.OperatorType == "Company" || _TCQM.OperatorType == "ኩባንያ")
+                {
+                    <p>@_TCQM.BusinessName</p>
+                }
+                else
+                {
+                    <p>@_TCQM.WebsiteName</p>
+
+                }                <p> @_TCQM.Address.Subcity, Sub city Woreda @_TCQM.Address.Woreda</p>
+                <p> @_TCQM.Address.Region, @_TCQM.Address.Country</p>
+                @if (_TCQM.PhoneNumber != null)
+                {
+                    <p>Phone Number: <a href="tel:@_TCQM.PhoneNumber">@_TCQM.PhoneNumber</a></p>
+                }
+                @if (_TCQM.Email != null)
+                {
+                    <p>Email: <a href="mailto:@_TCQM.Email">@_TCQM.Email</a></p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 row">
+
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Class="w-100" Click="OnChangeAnswerCliked" Icon="arrow_back_ios" Text="@_localizer["Back"]" />
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Click="OnDownloadClicked" Class="w-100" Icon="download" Text="@_localizer["Download"]" />
+        </div>
+    </div>
+</div>

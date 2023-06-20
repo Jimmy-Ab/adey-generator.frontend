@@ -1,0 +1,103 @@
+﻿@inject IStringLocalizer<Resource> _localizer
+
+<div class="cont">
+    <div class="card rz-shadow-1" style="font-size: 16px; min-height: 90vh;">
+
+        <div id="cont">
+            <div class="d-flex justify-content-center mt-1">
+                <h2 style="font-size: 25px;">
+                    Imprint
+                </h2>
+            </div>
+            <div class="mt-1">
+                <h2>@_IQM.CompanyName</h2>
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>Address</h3>
+                <div class="m-2">
+                    <p>
+                        @_IQM.CompanyAddress.Subcity Subcity,  Woreda @_IQM.CompanyAddress.Woreda
+                        <br />
+                        House Number:- @_IQM.CompanyAddress.HouseNumber
+                        <br />
+                        @_IQM.CompanyAddress.Region, @_IQM.CompanyAddress.Country
+                    </p>
+
+                </div>
+                @if (_IQM.AdditionalAddress != null)
+                {
+                    <h3>Additional Address</h3>
+                    <div class="m-3">
+                        <p>@_IQM.AdditionalAddress</p>
+                    </div>
+
+                }
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>Contact</h3>
+                <div class="m-2" style="padding: 5px">
+                    <p>Phone Number:  <a href="tel:@_IQM.PhoneNumber">@_IQM.PhoneNumber</a></p>
+                    <p>Email:  <a href="mailto:@_IQM.Email">@_IQM.Email</a></p>
+                </div>
+            </div>
+
+            <div class=" justify-content-start mt-1">
+                <p> <span style="font-size: 17px; font-weight: 600; color: black">Register Number:</span> @_IQM.BusinessRegisterNumber</p>
+            </div>
+            <div class=" justify-content-start mt-1">
+                <p> <span style="font-size: 17px; font-weight: 600; color: black">VAT ID:</span> @_IQM.VATID</p>
+            </div>
+            <div class="d-flex justify-content-start mt-1">
+                <p> <span style="font-size: 17px; font-weight: 600; color: black">Sales Tax ID:</span> @_IQM.TaxNumber</p>
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>Managing director</h3>
+                <div class="m-3">
+                    <p>@_IQM.Representer</p>
+                </div>
+            </div>
+            <div class="justify-content-start mt-1">
+                <h3>Legal form</h3>
+                <div class="m-3">
+                    <p>@_IQM.CompanyType</p>
+                </div>
+            </div>
+            @if (_IQM.OtherWebsiteLink)
+            {
+                <div class="justify-content-start mt-2">
+                    <h3 style="font-size: 25px;">Liability for links</h3>
+                    <p style="text-align: justify; text-align-last: left;">
+                        Our website may contain links to external websites of third parties, the contents being beyond our controls.
+                        Therefore no liability can be assumed for these external contents. The respective provider or operator of the
+                        pages is always responsible for the content of the linked pages. The linked pages were checked for possible
+                        legal violations at the time of linking. Illegal contents were not recognizable at the time of linking.
+                        If we become aware of any infringements, such links will be removed immediately.
+                    </p>
+                </div>
+            }
+            <div class="justify-content-start mt-2">
+
+                <p style="text-align: justify; text-align-last: left;">
+                    <strong>Copyright:</strong> All rights are reserved.
+                    The contents and works created by <strong>@_IQM.CompanyName</strong> are subject to Ethiopian copyright law.
+                    The reproduction, editing, distribution and any kind of utilization outside the limits of the copyright law
+                    require the author’s or creator’s written consent. Unwarranted utilization of such content in whole or in part
+                    by third parties is strictly prohibited.
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="mt-4 row">
+
+        <div class="col-sm-12 col-md-6 mb-2">
+            <RadzenButton Class="w-100" Click="OnChangeAnswerCliked" Icon="arrow_back_ios" Text="@_localizer["Back"]" />
+        </div>
+
+
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Click="OnDownloadClicked" Disabled="!paidForImprint" Class="w-100" Icon="download" Text="@_localizer["Download"]" />
+        </div>
+    </div>
+</div>
+

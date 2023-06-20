@@ -1,0 +1,426 @@
+@page "/privacy-policy"
+@page "/privacy-policy/payment/{Payment}"
+
+@using PrivacyPolicyGeneratorFrontend.WebApp.Pages.PrivacyPolicy.Components
+@using Radzen.Blazor
+@inject IStringLocalizer<Resource> _localizer
+
+
+<PageTitle>Generate Privacy Policy</PageTitle>
+
+@if (!_generated)
+{
+    <div class="cont">
+        <div class="row mb-2">
+            <div class="col-sm-12 col-md-6">
+                <h4>
+                    @_localizer["P-PH1"]  (<span>*</span>)
+                </h4>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <RadzenCard class="rz-shadow-1 rz-border-radius-4">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                        @_localizer["SelectLanguage"] <span>*</span>
+                    </RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                    Data=@_languages TextProperty="@_localizer["Select"]" Change=@(args => OnLanguageChanged(args, "langauge")) />
+                </RadzenCard>
+            </div>
+        </div>
+        <div class="card rz-shadow-1 rz-border-radius-4" style="min-height: 90vh">
+            <h5>
+                @_localizer["P-PH2"]
+            </h5>
+            <RadzenSteps @bind-SelectedIndex=@selectedIndex Change=@OnChange>
+                <Steps>
+                    <RadzenStepsItem Text="@_localizer["P-PStep1"]">
+                        <RadzenCard>
+
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["PPQ1"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_platform TextProperty="Platform" Change=@(args => OnPlatformChanged(args, "platform")) />
+                                        </RadzenCard>
+                                    </div>
+                                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "Both" || _PPQM.Platform == "ድህረገፅ" || _PPQM.Platform == "ሁለቱም")
+                                    {
+                                        <div class="col-md-4 col-lg-4">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ2"]
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.WebsiteURL" Placeholder="@_localizer["PPQ2"]" />
+                                            </RadzenCard>
+                                        </div>
+
+                                    }
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["PPQ3"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenTextBox Class="w-100" @bind-Value="_PPQM.WebsiteName" Placeholder="@_localizer["PPQ3"]" />
+                                        </RadzenCard>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["PPQ4"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                            Data=@_operator TextProperty="OperatorType" Change=@(args => OnOperatorTypeChanged(args, "company type")) />
+                                        </RadzenCard>
+                                    </div>
+                                    @if (_PPQM.OperatorType == "Company" || _PPQM.OperatorType == "ኩባንያ")
+                                    {
+                                        <div class="col-md-4 col-lg-4 pb-2">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ5"]
+                                                </RadzenText>
+                                                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                                Data=@_companyTypes TextProperty="CompanyType" Change=@(args => OnCompanyTypeChanged(args, "company type")) />
+                                            </RadzenCard>
+                                        </div>
+                                    }
+
+                                    <div class="col-md-4 col-lg-4 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                @_localizer["PPQ6"] <span>*</span>
+                                            </RadzenText>
+                                            <RadzenTextBox Class="w-100" @bind-Value="_PPQM.BusinessName" Placeholder="@_localizer["PPQ6"]" />
+                                        </RadzenCard>
+                                    </div>
+
+                                    <RadzenCard class="row m-2">
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                            @_localizer["PPQ7"] <span>*</span>
+                                        </RadzenText>
+                                        <div class="col-md-3 col-lg-3 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ8"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Address.Country" Placeholder="@_localizer["PPQ8"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ9"] <span>*</span></RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Address.Region" Placeholder="@_localizer["PPQ9"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-2 col-lg-2 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ10"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Address.Subcity" Placeholder="@_localizer["PPQ10"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-2 col-lg-2 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ11"] <span>*</span></RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Address.Woreda" Placeholder="@_localizer["PPQ11"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-2 col-lg-2 p-1">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PPQ12"] <span>*</span>
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Address.HouseNumber" Placeholder="@_localizer["PPQ12"]" />
+                                            </RadzenCard>
+                                        </div>
+                                    </RadzenCard>
+                                </div>
+                            </div>
+                        </RadzenCard>
+                    </RadzenStepsItem>
+                    <RadzenStepsItem Text="@_localizer["P-PStep2"]"
+                                     Disabled="@(_PPQM.Platform == null || _PPQM.OperatorType == null || _PPQM.WebsiteName == null || _PPQM.BusinessName == null ||
+                         _PPQM.Address.Country == null || _PPQM.Address.Region == null || _PPQM.Address.Subcity == null || _PPQM.Address.Woreda == null || _PPQM.Address.HouseNumber == null)">
+                        <RadzenCard>
+                            <div class="row">
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3"> @_localizer["PPQ13"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Value="_PPQM.CollectPersonalInformation" Class="mt-2 ml-3" Change=@(args => OnCheckBoxChanged(args, "CollectPersonalInformationYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" Value="!_PPQM.CollectPersonalInformation" Change=@(args => OnCheckBoxChanged(args, "CollectPersonalInformationNo")) TValue="bool" Class="mt-2 ml-3" />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ16"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.ShareData" Change=@(args => OnCheckBoxChanged(args, "ShareDataYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" TValue="bool" Class="mt-2 ml-3" Value="!_PPQM.ShareData" Change=@(args => OnCheckBoxChanged(args, "ShareDataNo")) />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                        @if (_PPQM.ShareData)
+                                        {
+                                            <div class="col-md-12 col-lg-12 pb-2">
+                                                <RadzenCard Class="mt-3">
+                                                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                        @_localizer["SelectTP"]
+                                                    </RadzenText>
+                                                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]" Multiple="true" Chips="true"
+                                                                    Data=@_thirdParties TextProperty="Third Parties" Change=@(args => OnThirdPartyChanged(args, "third parties")) />
+                                                </RadzenCard>
+                                            </div>
+                                        }
+
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ17"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.UseCookies" Change=@(args => OnCheckBoxChanged(args, "UseCookiesYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" TValue="bool" Class="mt-2 ml-3" Value="!_PPQM.UseCookies" Change=@(args => OnCheckBoxChanged(args, "UseCookiesNo")) />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                        @if (_PPQM.UseCookies)
+                                        {
+                                            <RadzenCard Class="mt-3">
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    Cookie Type
+                                                </RadzenText>
+                                                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="Select..." Multiple="true" Chips="true"
+                                                                Data=@_cookieTypes TextProperty="Cookie Type" Change=@(args => OnCookieTypeChanged(args, "cookie type")) />
+                                            </RadzenCard>
+                                        }
+
+                                    </RadzenCard>
+
+                                </div>
+                                @if (_PPQM.CollectPersonalInformation)
+                                {
+
+                                    <div class="col-md-6 pb-2">
+                                        <RadzenCard>
+                                            <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ14"] <span>*</span></RadzenText>
+                                            <div>
+
+                                                <RadzenCheckBox Name="Name" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Name" Change=@(args => OnCheckBoxChanged(args, "Name")) />
+                                                <RadzenLabel Text="@_localizer["Name"]" Component="Name" Style="margin-left: 8px; vertical-align: middle;" />
+
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Address" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Address" Change=@(args => OnCheckBoxChanged(args, "Address")) />
+                                                <RadzenLabel Text="@_localizer["Address"]" Component="Address" Style="margin-left: 8px; vertical-align: middle;" />
+
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Email" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Email" Change=@(args => OnCheckBoxChanged(args, "Email")) />
+                                                <RadzenLabel Text="@_localizer["Email"]" Component="Email" Style="margin-left: 8px; vertical-align: middle;" />
+
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Phone Number" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.PhoneNumber" Change=@(args => OnCheckBoxChanged(args, "Phone")) />
+                                                <RadzenLabel Text="@_localizer["PhoneNumber"]" Component="Phone Number" Style="margin-left: 8px; vertical-align: middle;" />
+
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Age" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Age" Change=@(args => OnCheckBoxChanged(args, "Age")) />
+                                                <RadzenLabel Text="@_localizer["Age"]" Component="Age" Style="margin-left: 8px; vertical-align: middle;" />
+
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Gender" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Gender" Change=@(args => OnCheckBoxChanged(args, "Gender")) />
+                                                <RadzenLabel Text="@_localizer["Gender"]" Component="Gender" Style="margin-left: 8px; vertical-align: middle;" />
+
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Payment" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Payment" Change=@(args => OnCheckBoxChanged(args, "Payment")) />
+                                                <RadzenLabel Text="@_localizer["PPAndInfo"]" Component="Payment" Style="margin-left: 8px; vertical-align: middle;" />
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Location" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Location" Change=@(args => OnCheckBoxChanged(args, "Location")) />
+                                                <RadzenLabel Text="@_localizer["Location"]" Component="Location" Style="margin-left: 8px; vertical-align: middle;" />
+                                            </div>
+                                            <div>
+                                                <RadzenCheckBox Name="Others" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.TypesOfDataCollected.Others" Change=@(args => OnCheckBoxChanged(args, "Others")) />
+                                                <RadzenLabel Text="@_localizer["Others"]" Component="Others" Style="margin-left: 8px; vertical-align: middle;" />
+                                            </div>
+                                            @if (_PPQM.TypesOfDataCollected.Others)
+                                            {
+                                                <div class="col-md-12 col-lg-12 pb-2">
+                                                    <RadzenCard>
+                                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["OtherDatas"]</RadzenText>
+                                                        <RadzenTextArea @bind-Value="_PPQM.TypesOfDataCollected.OtherDatas" Class="w-100" Placeholder="@_localizer["List"]" />
+                                                    </RadzenCard>
+                                                </div>
+                                            }
+                                        </RadzenCard>
+                                    </div>
+                                }
+
+                                <div class="col-md-6 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ15"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Run" TValue="bool" Class="ml-3" Value="_PPQM.PurposeOfCollection.Run" Change=@(args => OnCheckBoxChanged(args, "Run")) />
+                                        <RadzenLabel Text="@_localizer["Run"]" Component="Run" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="Provide" TValue="bool" Class="ml-3" Value="_PPQM.PurposeOfCollection.Provide" Change=@(args => OnCheckBoxChanged(args, "Provide")) />
+                                        <RadzenLabel Text="@_localizer["Provide"]" Component="Provide" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="Improve" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Improve" Change=@(args => OnCheckBoxChanged(args, "Improve")) />
+                                        <RadzenLabel Text="@_localizer["Improve"]" Component="Improve" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="Communicate" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Communicate" Change=@(args => OnCheckBoxChanged(args, "Communicate")) />
+                                        <RadzenLabel Text="@_localizer["Communicate"]" Component="Communicate" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="PaymentPurpose" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Payment" Change=@(args => OnCheckBoxChanged(args, "PaymentPurpose")) />
+                                        <RadzenLabel Text="@_localizer["Payment"]" Component="PaymentPurpose" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="Research" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Research" Change=@(args => OnCheckBoxChanged(args, "Research")) />
+                                        <RadzenLabel Text="@_localizer["Research"]" Component="Research" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="Security" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Security" Change=@(args => OnCheckBoxChanged(args, "Security")) />
+                                        <RadzenLabel Text="@_localizer["Security"]" Component="Security" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="Ads" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Ads" Change=@(args => OnCheckBoxChanged(args, "Ads")) />
+                                        <RadzenLabel Text="@_localizer["Ads"]" Component="Ads" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="OtherPersonalData" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.PurposeOfCollection.Others" Change=@(args => OnCheckBoxChanged(args, "OtherPersonalData")) />
+                                        <RadzenLabel Text="@_localizer["Others"]" Component="OtherPersonalData" Style="margin-left: 8px; vertical-align: middle;" />
+                                        @if (_PPQM.PurposeOfCollection.Others)
+                                        {
+                                            <div class="col-md-12 col-lg-12 pb-2">
+                                                <RadzenCard>
+                                                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["OtherPurposes"]</RadzenText>
+                                                    <RadzenTextArea @bind-Value="_PPQM.PurposeOfCollection.OtherPurposes" Class="w-100" Placeholder="@_localizer["List"]" />
+                                                </RadzenCard>
+                                            </div>
+                                        }
+                                    </RadzenCard>
+                                </div>
+
+                            </div>
+                        </RadzenCard>
+                    </RadzenStepsItem>
+                    <RadzenStepsItem Text="@_localizer["P-PStep3"]" Disabled="@((!_PPQM.TypesOfDataCollected.Name && !_PPQM.TypesOfDataCollected.Address && !_PPQM.TypesOfDataCollected.Email && !_PPQM.TypesOfDataCollected.PhoneNumber && !_PPQM.TypesOfDataCollected.Location && !_PPQM.TypesOfDataCollected.Others)
+                                                                              || (!_PPQM.PurposeOfCollection.Run && !_PPQM.PurposeOfCollection.Improve && !_PPQM.PurposeOfCollection.Communicate && !_PPQM.PurposeOfCollection.Ads && !_PPQM.PurposeOfCollection.Others))">
+                        <RadzenCard>
+                            <div class="row">
+
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ18"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.UseRemarketingForAdvertising" Change=@(args => OnCheckBoxChanged(args, "UseRemarketingForAdvertisingYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" TValue="bool" Class="mt-2 ml-3" Value="!_PPQM.UseRemarketingForAdvertising" Change=@(args => OnCheckBoxChanged(args, "UseRemarketingForAdvertisingNo")) />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ19"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.UseTrackingTechs" Change=@(args => OnCheckBoxChanged(args, "UseTrackingTechsYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" TValue="bool" Class="mt-2 ml-3" Value="!_PPQM.UseTrackingTechs" Change=@(args => OnCheckBoxChanged(args, "UseTrackingTechsNo")) />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                        @if (_PPQM.UseTrackingTechs)
+                                        {
+                                            <RadzenCard Class="mt-3">
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["SelectTTT"]
+                                                </RadzenText>
+                                                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]" Multiple="true" Chips="true "
+                                                                Data=@_trackingTechTypes TextProperty="Tech Type" Change=@(args => OnTechTypeChanged(args, "tech type")) />
+                                            </RadzenCard>
+                                        }
+
+                                    </RadzenCard>
+
+                                </div>
+                                <div class="col-md-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ20"] <span>*</span></RadzenText>
+                                        <RadzenCheckBox Name="Yes" TValue="bool" Class="mt-2 ml-3" Value="_PPQM.ProvideHyperlinks" Change=@(args => OnCheckBoxChanged(args, "ProvideHyperLinksYes")) />
+                                        <RadzenLabel Text="@_localizer["Yes"]" Component="Yes" Style="margin-left: 8px; vertical-align: middle;" />
+                                        <br />
+                                        <RadzenCheckBox Name="No" TValue="bool" Class="mt-2 ml-3" Value="!_PPQM.ProvideHyperlinks" Change=@(args => OnCheckBoxChanged(args, "ProvideHyperLinksNo")) />
+                                        <RadzenLabel Text="@_localizer["No"]" Component="No" Style="margin-left: 8px; vertical-align: middle;" />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 col-lg-4 pb-2">
+
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                            @_localizer["PPQ21"] <span>*</span>
+                                        </RadzenText>
+                                        <RadzenDropDown AllowClear="true" TValue="string" Class="w-100" Placeholder="@_localizer["Select"]"
+                                                        Data=@_audienceAge TextProperty="Audience Age" Change=@(args => OnAudienceAgeChanged(args, "audience age")) />
+                                    </RadzenCard>
+                                </div>
+                                <div class="col-md-4 col-lg-4 pb-2">
+                                    <RadzenCard>
+                                        <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ23"] <span>*</span></RadzenText>
+                                        <RadzenDatePicker @bind-Value=_PPQM.EffectiveDate DateFormat="d" Class="w-100" />
+                                    </RadzenCard>
+                                </div>
+                                <RadzenCard Class="w-100">
+                                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["PPQ22"]</RadzenText>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">@_localizer["Email"]</RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Contact.Email" Placeholder="@_localizer["Email"]" />
+                                            </RadzenCard>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <RadzenCard>
+                                                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">
+                                                    @_localizer["PhoneNumber"]
+                                                </RadzenText>
+                                                <RadzenTextBox Class="w-100" @bind-Value="_PPQM.Contact.PhoneNumber" Placeholder="@_localizer["PhoneNumber"]" />
+                                            </RadzenCard>
+                                        </div>
+                                    </div>
+                                </RadzenCard>
+
+                            </div>
+                        </RadzenCard>
+
+
+                    </RadzenStepsItem>
+
+                </Steps>
+
+            </RadzenSteps>
+            <div class="mt-1">
+                <h5>@_localizer["P-PH3"]</h5>
+
+                <div class="w-100">
+                    <RadzenButton Class="w-100" Icon="check_circle" BusyText="@_localizer["Generating"]" IsBusy=@busy Click=@OnBusyClick Text="@_localizer["Generate"]"
+                                  Disabled="@(_lang == null || _PPQM.AudienceAge == null || (_PPQM.Contact.Email == null && _PPQM.Contact.PhoneNumber == null))" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    @if (_lang == "English" || _lang == "እንግሊዝኛ")
+    {
+        <GeneratedPrivacyPolicy OnChangeAnswer="OnChangeAnswer" _PPQM="_PPQM" />
+    }
+    else
+    {
+        <GeneratedPrivacyPolicyAm OnChangeAnswer="OnChangeAnswer" _PPQM="_PPQM" />
+    }
+}

@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0-rc.1.22427.2" />
+    <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageReference Include="Radzen.Blazor" Version="4.1.0" />
+    <PackageReference Include="await" Version="0.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="MudBlazor" />
+    <None Remove="Radzen.Blazor" />
+    <None Remove="Pages\PrivacyPolicy\Components\" />
+    <None Remove="Pages\Imprint\Components\" />
+    <None Remove="Microsoft.Extensions.Localization" />
+    <None Remove="Blazored.LocalStorage" />
+    <None Remove="Resources\Resources.am" />
+    <None Remove="Pages\TermsAndConditions\Components\" />
+    <None Remove="Shared\Resources\" />
+    <None Remove="Shared\Extensions\" />
+    <None Remove="Select.HtmlToPdf.NetCore" />
+    <None Remove="await" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrivacyPolicyGeneratorFrontend.WebService\PrivacyPolicyGeneratorFrontend.WebService.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\PrivacyPolicy\Components\" />
+    <Folder Include="Pages\Imprint\Components\" />
+    <Folder Include="wwwroot\Images\" />
+    <Folder Include="Pages\TermsAndConditions\Components\" />
+    <Folder Include="Shared\Extensions\" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\privacy_policy.svg" />
+    <Content Remove="wwwroot\Images\" />
+    <Content Remove="wwwroot\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Images\privacy_policy.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Shared\Resources\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Shared\Resources\Resource.am.Designer.cs">
+      <DependentUpon>Resource.am.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Shared\Resources\Resource.am.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.am.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Shared\Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,112 @@
+﻿@page "/"
+@page "/home"
+
+@inject IStringLocalizer<Resource> _localizer
+
+    <PageTitle>@_localizer["Adey"] @_localizer["Generator"]</PageTitle>
+    <div class="cont" style=" min-height: 90vh">
+        <div class="rz-shadow-5 p-5 card" style="border-radius: 25px;">
+            <h1 class="d-flex justify-content-center">@_localizer["Header1"] </h1>
+            <p style="text-align: justify; text-align-last: center; font-size: 20px; ">
+                @_localizer["Header2"]
+            </p>
+            <div class="w-100 row mt-3">
+                <div class="col-12 col-md-6 mt-3 img-container">
+                    <img src="Images/Payment.png" />
+                </div>
+                <div class="p-4 col-12 col-md-6">
+                    <h1>
+                        @_localizer["HPTB1"] </h1>
+                    <p style="font-size: 17px; "> @_localizer["HPTB2"]</p>
+                    <div class="d-flex">
+                        <h2 class="mt-5 ml-auto p-2" style="color: #1151F3"> @_localizer["HPTB3"]</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="p-4 w-100 row mt-4">
+            <div class="p-4 col-12 col-md-6">
+
+                <p style="font-size: 20px; font-weight: 700;" class="d-flex justify-content-center">
+                    @_localizer["PrivacyPolicy"]
+                </p>
+                <p style="font-size: 18px; font-weight: 500">
+                    @_localizer["PPH1"]
+                </p>
+                <p style="font-size: 17px; font-weight: 300">
+                    @_localizer["PPH2"]
+                </p>
+                <h3>@_localizer["Steps"]:-</h3>
+                <ol>
+                    <li>@_localizer["PPStep1"]</li>
+                    <li>@_localizer["PPStep2"]</li>
+                    <li>@_localizer["PPStep3"]</li>
+                    <li>@_localizer["PPStep4"]</li>
+                </ol>
+                <a style="text-decoration: none;" href="/privacy-policy">
+                    <RadzenButton Class="w-100">@_localizer["GeneratePP"]!</RadzenButton>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 mt-3 img-container">
+                <img src="Images/privacy_policy.svg" />
+            </div>
+        </div>
+        <hr style="margin: 2rem;" />
+        <div class="p-4 w-100 row">
+
+            <div class="col-12 col-md-6 w-50 img-container">
+                <img src="Images/imprint.svg" />
+            </div>
+            <div class="p-4 col-12 col-md-6">
+                <p style="font-size: 20px; font-weight: 700;" class="d-flex justify-content-center">
+                    @_localizer["Imprint"]</p>
+                <p style="font-size: 18px; font-weight: 500">
+                    @_localizer["IH1"]
+                </p>
+                <p style="font-size: 17px; font-weight: 300;">
+                    @_localizer["IH2"]
+                </p>
+
+                <h3>@_localizer["Steps"]:-</h3>
+                <ol>
+                    <li>@_localizer["IStep1"]</li>
+                    <li>@_localizer["IStep2"]</li>
+                    <li>@_localizer["Istep3"]</li>
+                    <li>@_localizer["Istep4"]</li>
+                </ol>
+                <a style="text-decoration: none;" href="/imprint">
+                    <RadzenButton Class="w-100">@_localizer["GenerateI"]!</RadzenButton>
+                </a>
+            </div>
+        </div>
+        <hr style="margin: 2rem;" />
+        <div class="p-4 w-100 row">
+            <div class="p-4 col-12 col-md-6">
+                <p style="font-size: 20px; font-weight: 700" class="d-flex justify-content-center">
+                    @_localizer["TermsAndCondition"]</p>
+                <p style="font-size: 18px; font-weight: 500">
+                    @_localizer["TCH1"]
+                </p>
+                <p style="font-size: 17px; font-weight: 300;">
+                    @_localizer["TCH2"]
+                </p>
+                <h3>@_localizer["Steps"]:-</h3>
+                <ol>
+                    <li>@_localizer["TCStep1"]</li>
+                    <li>@_localizer["TCStep2"]</li>
+                    <li>@_localizer["TCStep3"]</li>
+                    <li>@_localizer["TCStep4"]</li>
+
+                </ol>
+                <a style="text-decoration: none;" href="/terms-and-conditions">
+                    <RadzenButton Class="w-100">@_localizer["GenerateTC"]!</RadzenButton>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 img-container">
+                <img src="Images/terms&conditions.svg" />
+            </div>
+        </div>
+
+    </div>

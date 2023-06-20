@@ -1,0 +1,54 @@
+﻿@media only screen and (max-width: 600px) {
+    .cont {
+        width: 100%;
+        margin: 5rem auto;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .cont {
+        width: 100%;
+        margin: 5rem auto;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cont {
+        width: 100%;
+        margin: 6rem auto;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .cont {
+        width: 85%;
+        margin: 6rem auto;
+    }
+
+    .card {
+        padding: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .cont {
+        width: 85%;
+        margin: 6rem auto;
+    }
+
+    .card {
+        padding: 3rem;
+    }
+}

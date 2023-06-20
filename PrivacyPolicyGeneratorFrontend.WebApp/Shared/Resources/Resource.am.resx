@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>ስለ እኛ</value>
+    <comment/>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>ጨምር</value>
+    <comment/>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="Adey" xml:space="preserve">
+    <value>አደይ</value>
+    <comment/>
+  </data>
+  <data name="Adey-Generator" xml:space="preserve">
+    <value>አደይ-ጀነረተር</value>
+    <comment/>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>ማስታወቂያዎችን ለማሳየት</value>
+    <comment/>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>ዕድሜ</value>
+    <comment/>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>ሁሉም መብት በ በህግ የተጠበቀ ነው</value>
+    <comment/>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>ተመለስ እና መልስህን ቀይር</value>
+    <comment/>
+  </data>
+  <data name="Communicate" xml:space="preserve">
+    <value>ከተጠቃሚው ጋር ለመገናኘት</value>
+    <comment/>
+  </data>
+  <data name="CompanyRepresenter" xml:space="preserve">
+    <value>ድርጅት ተወካይ</value>
+    <comment/>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>መገናኛ</value>
+    <comment/>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>የቅጂ መብት</value>
+    <comment/>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>ፒዲኤፍ አውርድ</value>
+    <comment/>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ኢሜይል</value>
+    <comment/>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>ጾታ</value>
+    <comment/>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>አመንጭ</value>
+    <comment/>
+  </data>
+  <data name="GenerateI" xml:space="preserve">
+    <value>የድርጅት መረጃ አመንጭ</value>
+    <comment/>
+  </data>
+  <data name="GeneratePP" xml:space="preserve">
+    <value>የግላዊነት መመሪያ አመንጭ</value>
+    <comment/>
+  </data>
+  <data name="GenerateTC" xml:space="preserve">
+    <value>ደንብ እና ግዴታ አመንጭ</value>
+    <comment/>
+  </data>
+  <data name="Generating" xml:space="preserve">
+    <value>በማመንጨት ላይ...</value>
+    <comment/>
+  </data>
+  <data name="Generator" xml:space="preserve">
+    <value>ጀነረተር</value>
+    <comment/>
+  </data>
+  <data name="Header1" xml:space="preserve">
+    <value>የግላዊነት መመሪያ, የድርጅት መረጃዎን, እንድሁም ደንብ እና ግዴታዎን አብረውን ይስሩ</value>
+    <comment/>
+  </data>
+  <data name="Header2" xml:space="preserve">
+    <value>ለድር ጣቢያዎ እና መተግበሪያዎችዎ የግላዊነት መመሪያ ፣የድርጅት መረጃዎን, እንድሁም ደንብ እና ግዴታዎን, መስራት ለኛ በመተው ግዜዎትንና ጭንቀቶትን ይቀንሱ።ጥቂት ጥያቄዎችን ብቻ በመመለስ ሁሉም የሚጠናቀቅበትን መድረክ አቅርበንልዎታል።</value>
+    <comment/>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>መነሻ ገጽ</value>
+    <comment/>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>መነሻ ገጽ</value>
+    <comment/>
+  </data>
+  <data name="I-H1" xml:space="preserve">
+    <value>በሁለት ቋንቋዎች (በእንግሊዘኛ እና በአማርኛ) የድርጅት መረጃን መፍጠር ይችላሉ። ቅጹን ከመሙላትዎ በፊት የሚፈልጉትን ቋንቋ ይምረጡ። እንዲሁም እባክዎ መልሶችዎ በመረጡት ቋንቋ መሆናቸውን ያረጋግጡ። ተፈላጊ መስኮች</value>
+    <comment/>
+  </data>
+  <data name="I-H2" xml:space="preserve">
+    <value>የሚከተሉት ጥያቄዎች ትክክለኛ የድርጅት መረጃን ለመፍጠር ይረዱናል። እባክዎን በጣም በጥንቃቄ ይመልሱዋቸው።</value>
+    <comment/>
+  </data>
+  <data name="IH1" xml:space="preserve">
+    <value>የድርጅት መረጃ ምንድን ነው እና ለምን ያስፈልገናል?</value>
+    <comment/>
+  </data>
+  <data name="IH2" xml:space="preserve">
+    <value>የድርጅት መረጃ በመሠረቱ የባለቤትነት እና የደራሲነት መግለጫ ነው። የተጠቃሚ ውሂብን ለመጠበቅ፣የድር ጣቢያ ባለቤቶች እራሳቸውን እንዲለዩ በማድረግ ህገወጥ ይዘትን እና አላስፈላጊ መልዕክትን ለመዋጋት እና በውጤቱም በመድረክ ላይ ላለው ይዘት ሀላፊነት እንዲወስዱ ለማድረግ ነው የተዘጋጀው።</value>
+    <comment/>
+  </data>
+  <data name="Imprint" xml:space="preserve">
+    <value>የድርጅት መረጃ</value>
+    <comment/>
+  </data>
+  <data name="Improve" xml:space="preserve">
+    <value>አገልግሎቱን ለማሻሻል እና ለማዳበር</value>
+    <comment/>
+  </data>
+  <data name="IQ1" xml:space="preserve">
+    <value>የድርጅት ስም</value>
+    <comment/>
+  </data>
+  <data name="IQ2" xml:space="preserve">
+    <value>የድርጅቱ ዓይነት</value>
+    <comment/>
+  </data>
+  <data name="IQ3" xml:space="preserve">
+    <value>የድርጅት አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="IQ4" xml:space="preserve">
+    <value>ተጨማሪ አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="IQ5" xml:space="preserve">
+    <value>የንግድ ምዝገባ ቁጥር</value>
+    <comment/>
+  </data>
+  <data name="IQ6" xml:space="preserve">
+    <value>የተጨማሪ እሴት ታክስ ቁጥር</value>
+    <comment/>
+  </data>
+  <data name="IQ7" xml:space="preserve">
+    <value>የግብር ከፋይ መለያ ቁጥ</value>
+    <comment/>
+  </data>
+  <data name="IQ8" xml:space="preserve">
+    <value>ኩባንያውን የሚወክለው ማን ነው?</value>
+    <comment/>
+  </data>
+  <data name="IQ9" xml:space="preserve">
+    <value>የእርስዎ ድህረገፅ ሌላ የድህረገፅ አገናኞችን ያቀርባል?</value>
+    <comment/>
+  </data>
+  <data name="IStep1" xml:space="preserve">
+    <value>በዳሰሳ አሞሌው ላይ "አመንጭ" የሚለውን ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="IStep2" xml:space="preserve">
+    <value>በሞሌው ውስጥ " የድርጅት መረጃ’’ይምረጡ ወይም ከታች ያለውን አዝራር ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="Istep3" xml:space="preserve">
+    <value>ቅጾቹን በትክክል ይሙሉ እና ፣</value>
+    <comment/>
+  </data>
+  <data name="Istep4" xml:space="preserve">
+    <value>በመጨረሻም አመንጭ የሚለውን ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>ቋንቋ</value>
+    <comment/>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>ይዘርዝሩ</value>
+    <comment/>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>አካባቢ</value>
+    <comment/>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>ስም</value>
+    <comment/>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>አይ</value>
+    <comment/>
+  </data>
+  <data name="Office" xml:space="preserve">
+    <value>ቢሮ</value>
+    <comment/>
+  </data>
+  <data name="Office1" xml:space="preserve">
+    <value>ቦሌ ክፍለ ከተማ ወረዳ 12</value>
+    <comment/>
+  </data>
+  <data name="Office2" xml:space="preserve">
+    <value>የቤት ቁጥር: አዲስ</value>
+    <comment/>
+  </data>
+  <data name="Office3" xml:space="preserve">
+    <value>አዲስ አበባ፣ ኢትዮጵያ</value>
+    <comment/>
+  </data>
+  <data name="OtherDatas" xml:space="preserve">
+    <value>በ(,) ነጥለው የሚሰበስቡትን ሌላ ውሂብ ይዘርዝሩ</value>
+    <comment/>
+  </data>
+  <data name="OtherPusposes" xml:space="preserve">
+    <value>በ(,) ነጥለው ሌሎች ዓላማዎችን ይዘርዝሩ</value>
+    <comment/>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>ሌሎች</value>
+    <comment/>
+  </data>
+  <data name="P-PH1" xml:space="preserve">
+    <value>የግላዊነት ፖሊሲን በሁለት ቋንቋዎች (እንግሊዝኛ እና አማርኛ) መፍጠር ይችላሉ። ቅጹን ከመሙላትዎ በፊት እባክዎ የመረጡትን ቋንቋ ይምረጡ። እንዲሁም፣ እባክዎ መልሶችዎ በመረጡት ቋንቋ መሆናቸውን ያረጋግጡ። የሚያስፈልጉ መስኮች</value>
+    <comment/>
+  </data>
+  <data name="P-PH2" xml:space="preserve">
+    <value>የሚከተሉት ጥያቄዎች ትክክለኛ የግላዊነት ፖሊሲ ለመፍጠር ይረዱናል። እባክዎን በጣም በጥንቃቄ ይመልሱዋቸው።</value>
+    <comment/>
+  </data>
+  <data name="P-PH3" xml:space="preserve">
+    <value>ቅጾቹን መሙላት ሲጨርሱ ይህ አዝራር ንቁ ይሆናል። እባኮን ቋንቋ መምረጡን ያረጋግጡ እና ሁሉንም  የሚፈለጉትን መስክ መሞላቶን ያረጋግጡ!</value>
+    <comment/>
+  </data>
+  <data name="P-PStep1" xml:space="preserve">
+    <value>መድረክ፣ የንግድ ዝርዝር እና አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="P-PStep2" xml:space="preserve">
+    <value>የተጠቃሚ መረጃ፣ የግል መረጃ፣ የሶስተኛ ወገኖች እና ኩኪዎች</value>
+    <comment/>
+  </data>
+  <data name="P-PStep3" xml:space="preserve">
+    <value>ማስታወቂያ፣ ክትትል፣ ሃይፐርሊንኮች፣ ታዳሚዎች እና እውቂያ</value>
+    <comment/>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>ክፍያን ለማስኬድ</value>
+    <comment/>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>ስልክ ቁጥር</value>
+    <comment/>
+  </data>
+  <data name="PPAndInfo" xml:space="preserve">
+    <value>የክፍያ ሂደት እና መረጃ</value>
+    <comment/>
+  </data>
+  <data name="PPH1" xml:space="preserve">
+    <value>የግላዊነት  መመሪያ ምንድን ነው እና ለምን ያስፈልገናል?</value>
+    <comment/>
+  </data>
+  <data name="PPH2" xml:space="preserve">
+    <value>የግላዊነት መመሪያ አንድ አካል የደንበኞችን ወይም የደንበኞችን መረጃ የሚሰበስብበትን፣ የሚጠቀምበትን፣ የሚገልጽበትን እና የሚያስተዳድርበትን አንዳንድ ወይም ሁሉንም መንገዶች የሚገልጽ መግለጫ ወይም ህጋዊ ሰነድ ነው። ለድረ-ገጻችን እና መተግበሪያ የግላዊነት መመሪያ ሊኖረን ይገባል ምክንያቱም የግለሰብ መረጃ መቼ ፣እንዴት እና ለምን ዓላማ በሌሎች እንደሚያዙ በራሳቸው የመወሰን ችሎታ ጋር ስለሚገናኝ። ግላዊነትን መጠበቅ የሰውን ክብር፣ ደህንነት እና ራስን መወሰን ለማረጋገጥ ቁልፍ ነው። ግለሰቦች በነፃነት የራሳቸውን ስብዕና እንዲያዳብሩ ያስችላቸዋል።</value>
+    <comment/>
+  </data>
+  <data name="PPQ1" xml:space="preserve">
+    <value>ይህ የግላዊነት መመሪያ ለምን ነው ሚጠቀሙት?</value>
+    <comment/>
+  </data>
+  <data name="PPQ10" xml:space="preserve">
+    <value>ክ/ከተማ</value>
+    <comment/>
+  </data>
+  <data name="PPQ11" xml:space="preserve">
+    <value>ወረዳ</value>
+    <comment/>
+  </data>
+  <data name="PPQ12" xml:space="preserve">
+    <value>የቤት ቁጥር</value>
+    <comment/>
+  </data>
+  <data name="PPQ13" xml:space="preserve">
+    <value>ከተጠቃሚው የግል መረጃ ይሰበስባሉ?</value>
+    <comment/>
+  </data>
+  <data name="PPQ14" xml:space="preserve">
+    <value>ምን አይነት ውሂብ ነው የምትሰበስበው? አስፈላጊ ከሆነ ሁሉንም ይምረጡ</value>
+    <comment/>
+  </data>
+  <data name="PPQ15" xml:space="preserve">
+    <value>ለምን ዓላማ የግል መረጃን ይጠቀማሉ? </value>
+    <comment/>
+  </data>
+  <data name="PPQ16" xml:space="preserve">
+    <value>የእርስዎ ድህረገፅ የግል ውሂብን ለሶስተኛ ወገኖች ያጋራል? </value>
+    <comment/>
+  </data>
+  <data name="PPQ17" xml:space="preserve">
+    <value>የእርስዎ ድህረገፅ ኩኪዎችን ይጠቀማል? </value>
+    <comment/>
+  </data>
+  <data name="PPQ18" xml:space="preserve">
+    <value>የእርስዎ ድህረገፅ ለማስታወቂያ ዳግም ማሻሻጥ ይጠቀማል?</value>
+    <comment/>
+  </data>
+  <data name="PPQ19" xml:space="preserve">
+    <value>ለመከታተል ማንኛውንም ዲጂታል ሶፍትዌር ይጠቀማሉ?</value>
+    <comment/>
+  </data>
+  <data name="PPQ2" xml:space="preserve">
+    <value>የድህረ ገጹ ወይም የመተግበሪያው ተቆጣታሪ ወይም አቀናባሪ?</value>
+    <comment/>
+  </data>
+  <data name="PPQ20" xml:space="preserve">
+    <value>የእርስዎ ድረ-ገጾች ሌሎች hyperlinks ይሰጣሉ?</value>
+    <comment/>
+  </data>
+  <data name="PPQ21" xml:space="preserve">
+    <value>የድህረገፅ ተጠቃሚዎች ዕድሜ?</value>
+    <comment/>
+  </data>
+  <data name="PPQ22" xml:space="preserve">
+    <value>ተጠቃሚዎች እርስዎን እንዴት ማግኘት ይችላሉ?</value>
+    <comment/>
+  </data>
+  <data name="PPQ23" xml:space="preserve">
+    <value>የሚፀናበት ቀን</value>
+    <comment/>
+  </data>
+  <data name="PPQ3" xml:space="preserve">
+    <value>የድህረ ገጹ ወይም የመተግበሪያ ስም</value>
+    <comment/>
+  </data>
+  <data name="PPQ4" xml:space="preserve">
+    <value>የድህረ ገጹ  ወይም የመተግበሪያው ኦፕሬተር?</value>
+    <comment/>
+  </data>
+  <data name="PPQ5" xml:space="preserve">
+    <value>የኩባንያው ዓይነት</value>
+    <comment/>
+  </data>
+  <data name="PPQ6" xml:space="preserve">
+    <value>የንግድ ስም</value>
+    <comment/>
+  </data>
+  <data name="PPQ7" xml:space="preserve">
+    <value>የንግዱ አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="PPQ8" xml:space="preserve">
+    <value>ሀገር</value>
+    <comment/>
+  </data>
+  <data name="PPQ9" xml:space="preserve">
+    <value>ክልል</value>
+    <comment/>
+  </data>
+  <data name="PPStep1" xml:space="preserve">
+    <value>በዳሰሳ አሞሌው ላይ "አመንጭ" የሚለውን ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="PPStep2" xml:space="preserve">
+    <value>በሞሌው ውስጥ "የግላዊነት መመሪያን ይምረጡ ወይም ከታች ያለዉን አዝራር ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="PPStep3" xml:space="preserve">
+    <value>ቅጾቹን በትክክል ይሙሉ እና ፣</value>
+    <comment/>
+  </data>
+  <data name="PPStep4" xml:space="preserve">
+    <value>በመጨረሻም አመንጭ የሚለውን ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>የግላዊነት መመሪያ</value>
+    <comment/>
+  </data>
+  <data name="Provide" xml:space="preserve">
+    <value>ምርቶችን እና አገልግሎቶችን ለማቅረብ</value>
+    <comment/>
+  </data>
+  <data name="Research" xml:space="preserve">
+    <value>የገበያ ጥናት ለማካሄድ</value>
+    <comment/>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>ስርዓትን ለማስኬድ እና ለማንቀሳቀስ</value>
+    <comment/>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>ደህንነትን ለማረጋገጥ</value>
+    <comment/>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>ይምረጡ</value>
+    <comment/>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>ቋንቋ ይምረጡ</value>
+    <comment/>
+  </data>
+  <data name="SelectTP" xml:space="preserve">
+    <value>ሶስተኛ ወገኖችን ይምረጡ</value>
+    <comment/>
+  </data>
+  <data name="SelectTTT" xml:space="preserve">
+    <value>የመከታተያ ቴክኖሎጂ ዓይነቶችን ይምረጡ</value>
+    <comment/>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>አገልግሎቶች</value>
+    <comment/>
+  </data>
+  <data name="Steps" xml:space="preserve">
+    <value>እርምጃዎች</value>
+    <comment/>
+  </data>
+  <data name="T-CH1" xml:space="preserve">
+    <value>ውሎች እና ሁኔታዎች በሁለት ቋንቋዎች (እንግሊዝኛ እና አማርኛ) መፍጠር ይችላሉ። ቅጹን ከመሙላትዎ በፊት የሚፈልጉትን ቋንቋ ይምረጡ። እንዲሁም እባክዎ መልሶችዎ በመረጡት ቋንቋ መሆናቸውን ያረጋግጡ። ተፈላጊ መስኮች.</value>
+    <comment/>
+  </data>
+  <data name="T-CH2" xml:space="preserve">
+    <value>የሚከተሉት ጥያቄዎች ትክክለኛ ውሎችን እና ሁኔታዎችን ለመፍጠር ይረዱናል። እባክዎን በጣም በጥንቃቄ ይመልሱዋቸው።</value>
+    <comment/>
+  </data>
+  <data name="T-CStep1" xml:space="preserve">
+    <value>መድረክ፣ የንግድ ዝርዝር እና አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="T-CStep2" xml:space="preserve">
+    <value>አገልግሎቶች, መለያ እና ይዘቶች</value>
+    <comment/>
+  </data>
+  <data name="T-CStep3" xml:space="preserve">
+    <value>የንግድ ምልክቶች፣ ማካካሻ እና እውቂያዎች</value>
+    <comment/>
+  </data>
+  <data name="TCH1" xml:space="preserve">
+    <value>ደንብ እና ግዴታምንድን ነው እና ለምን ያስፈልገናል?</value>
+    <comment/>
+  </data>
+  <data name="TCH2" xml:space="preserve">
+    <value>ደንብ እና ግዴታ በእርስዎ እና በደንበኛዎ መካከል ለዕቃ ወይም ለአገልግሎት አቅርቦትዎ እና የንግድ ግንኙነቶን የሚቆጣጠረው የሕግ ውል ውሎች ናቸው። ከሌላ ሰው ጋር ንግድ ለመስራት የተስማሙበት ሁኔታ ናቸው።</value>
+    <comment/>
+  </data>
+  <data name="TCQ1" xml:space="preserve">
+    <value>እነዚህ ደንብ እና ግዴታዎች ለምን ጥቅም ላይ ይውላሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ10" xml:space="preserve">
+    <value>የሚሰጡት አገልግሎት ምንድን ነው?</value>
+    <comment/>
+  </data>
+  <data name="TCQ11" xml:space="preserve">
+    <value>ተጠቃሚዎች መለያ መፍጠር ይችላሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ12" xml:space="preserve">
+    <value>ተጠቃሚዎች መረጃ መለጠፍ ወይም ማጋራት ወይም ይዘት መስቀል ይችላሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ13" xml:space="preserve">
+    <value>የተጠቃሚውን ይዘት ትጠቀማለህ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ14" xml:space="preserve">
+    <value>የተጠቃሚዎችን የተለጠፈ ይዘት የመቀየር ወይም የመሰረዝ መብቱ የተጠበቀ ነው?</value>
+    <comment/>
+  </data>
+  <data name="TCQ15" xml:space="preserve">
+    <value>ለተጠቃሚዎች ጋዜጣዎችን ይልካሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ16" xml:space="preserve">
+    <value>ጋዜጣዎችን እንዴት ይልካሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ17" xml:space="preserve">
+    <value>የእርስዎ ድህረገፅ የሶስተኛ ወገን አገናኞችን ይሰጣሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ18" xml:space="preserve">
+    <value>ለተጠቃሚዎችዎ የዕድሜ ገደብ አለዎት?</value>
+    <comment/>
+  </data>
+  <data name="TCQ19" xml:space="preserve">
+    <value>ድህረገጹ ታዳሚ ዕድሜ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ2" xml:space="preserve">
+    <value>የድህረ ገጹ ወይም የመተግበሪያው ተቆጣታሪ ወይም አቀናባሪ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ20" xml:space="preserve">
+    <value>ተጠቃሚዎች የእርስዎን ድር ጣቢያ ለንግድ ዓላማ ይጠቀማሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ21" xml:space="preserve">
+    <value>የእራስዎ ይዘት እና የንግድ ምልክቶች የእርስዎ ብቸኛ ንብረት መሆናቸውን ግልጽ ማድረግ ይፈልጋሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ22" xml:space="preserve">
+    <value>በውሉ እና ሁኔታዎች ውስጥ የተጠያቂነት ገደብ እና የካሳ ክፍያን ማካተት ይፈልጋሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ23" xml:space="preserve">
+    <value>የተጠቃሚ መለያዎችን የማቋረጥ መብት አሎት?</value>
+    <comment/>
+  </data>
+  <data name="TCQ24" xml:space="preserve">
+    <value>የተጠቃሚ መለያዎችን ከማቋረጡ በፊት ማስታወቂያ ይሰጣሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ25" xml:space="preserve">
+    <value>ስለ ውሎችዎ እና ሁኔታዎችዎ ዝመናዎችን ለተጠቃሚዎችዎ ያሳውቃሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ26" xml:space="preserve">
+    <value>ስለእነዚህ ውሎች እና ሁኔታዎች ማሻሻያ ለተጠቃሚዎችዎ እንዴት ያሳውቃሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ27" xml:space="preserve">
+    <value>ተጠቃሚዎች እርስዎን እንዴት ማግኘት ይችላሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ28" xml:space="preserve">
+    <value>የግፋ ማስታወቂያዎችን ለተጠቃሚዎች ይልካሉ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ3" xml:space="preserve">
+    <value>የድርጅቱ ዓይነት</value>
+    <comment/>
+  </data>
+  <data name="TCQ4" xml:space="preserve">
+    <value>የንግድ ስም</value>
+    <comment/>
+  </data>
+  <data name="TCQ5" xml:space="preserve">
+    <value>የድህረገፅ URL ምንድን ነው?</value>
+    <comment/>
+  </data>
+  <data name="TCQ6" xml:space="preserve">
+    <value>የድህረጹ ወይም የመተግበሪያው ስም</value>
+    <comment/>
+  </data>
+  <data name="TCQ7" xml:space="preserve">
+    <value>የንግዱ አድራሻ</value>
+    <comment/>
+  </data>
+  <data name="TCQ8" xml:space="preserve">
+    <value>የድህረገፅህ ላይ የግላዊነት ፖሊሲ አለህ?</value>
+    <comment/>
+  </data>
+  <data name="TCQ9" xml:space="preserve">
+    <value>አገናኙን(URL) ወደ የግላዊነት መመሪያዎ ያስቀምጡ</value>
+    <comment/>
+  </data>
+  <data name="TCStep1" xml:space="preserve">
+    <value>በዳሰሳ አሞሌው ላይ "አመንጭ" የሚለውን ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="TCStep2" xml:space="preserve">
+    <value>በሞሌው ውስጥ " ደንብ እና ግዴታ’’ይምረጡ ወይም ከታች ያለውን አዝራር ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="TCStep3" xml:space="preserve">
+    <value>ቅጾቹን በትክክል ይሙሉ እና ፣</value>
+    <comment/>
+  </data>
+  <data name="TCStep4" xml:space="preserve">
+    <value>በመጨረሻም አመንጭ የሚለውን ይጫኑ</value>
+    <comment/>
+  </data>
+  <data name="TermsAndCondition" xml:space="preserve">
+    <value>ደንብ እና ግዴታ</value>
+    <comment/>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>አዎ</value>
+    <comment/>
+  </data>
+  <data name="HPTB1" xml:space="preserve">
+    <value>ቀላል እና ፈጣን ክፍያ በቴሌቢር </value>
+    <comment/>
+  </data>
+  <data name="HPTB2" xml:space="preserve">
+    <value>የመስመር ላይ ክፍያ ከቴሌቢር ጋር ተቀናጅቷል። ለጥያቄዎች መልስ ከጨረሱ በኋላ ቴሌቢርን በመጠቀም በመስመር ላይ እንዲከፍሉ ይጠየቃሉ። ያለክፍያ ማረጋገጫ የመነጩ ሰነዶችን ማውረድ ወይም መቅዳት እና መለጠፍ አይችሉም።</value>
+    <comment/>
+  </data>
+  <data name="HPTB3" xml:space="preserve">
+    <value>300 ኢ.ቢ. / ሰነድ</value>
+    <comment/>
+  </data>
+  <data name="TBP1" xml:space="preserve">
+    <value>የመነጨ ሰነድ ለማውረድ ቴሌቢርን በመጠቀም 300ኢ..ቢ ይክፈሉ።</value>
+    <comment/>
+  </data>
+  <data name="TBP2" xml:space="preserve">
+    <value>የቴሌብር ክፍያ</value>
+    <comment/>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>ይክፈሉ</value>
+    <comment/>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>አጥፋ</value>
+    <comment/>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>ቀጥል</value>
+    <comment/>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>እንደገና ጀምር</value>
+    <comment/>
+  </data>
+  <data name="RP1" xml:space="preserve">
+    <value>የቀድሞ መልሶችህን ከቆመበት መቀጠል ትፈልጋለህ?</value>
+    <comment/>
+  </data>
+</root>

@@ -1,0 +1,411 @@
+﻿@using Radzen.Blazor
+@inject IStringLocalizer<Resource> _localizer
+
+<div class="cont">
+    <div class="card rz-shadow-1" style="font-size: 16px; min-height: 90vh;">
+        <div id="cont">
+            <div class="d-flex justify-content-center mt-2">
+                <h4 style="font-size: 25px;">Privacy Policy</h4>
+            </div>
+            <div class="d-flex justify-content-start mt-2">
+                <h4 style="font-size: 25px;">Introduction</h4>
+            </div>
+            <p style="text-align: justify; text-align-last: left;">Your privacy is our priority.</p>
+            <p style="text-align: justify; text-align-last: left;">We want you to feel secure about the personal data which you share with us that’s why we provide this privacy policy. In this privacy policy, we would like to explain to you what personal data we collect, how we use it, for what purpose we use it, how long we keep it, with who we share it, and your rights.</p>
+            @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+            {
+                <p style="text-align: justify; text-align-last: left;">Please read this privacy policy before using the <strong>@_PPQM.WebsiteName</strong> Website operated (owned) by <strong>@_PPQM.BusinessName</strong> in @_PPQM.Address.Country</p>
+            }
+            @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+            {
+                <p style="text-align: justify; text-align-last: left;">Please read this privacy policy before using the <strong>@_PPQM.WebsiteName</strong> Application operated(owned) by <strong>@_PPQM.BusinessName</strong> in @_PPQM.Address.Country</p>
+            }
+            @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+            {
+                <p style="text-align: justify; text-align-last: left;">Please read this privacy policy before using the <strong>@_PPQM.WebsiteName</strong> Website and Application operated(owned) by <strong>@_PPQM.BusinessName</strong> in @_PPQM.Address.Country</p>
+            }
+
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">Definition only for this privacy policy</h5>
+                <ul>
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li>
+                            <strong>Website:-</strong>refers to <strong>@_PPQM.WebsiteName</strong> website.
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li>
+                            <strong>Application:-</strong>refers to <strong>@_PPQM.WebsiteName</strong> Application.
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li>
+                            <strong>Website and Application:-</strong>refers to <strong>@_PPQM.WebsiteName</strong> Website and Application.
+                        </li>
+                    }
+                    <li><strong>You: -</strong>means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li>
+                            <strong>WE, US, OUR:- </strong>refer to the<strong> @_PPQM.WebsiteName</strong> website
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li>
+                            <strong>WE, US, OUR:- </strong>refer to the <strong>@_PPQM.WebsiteName</strong>application
+                        </li>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li><strong>WE, US, OUR:- </strong>refer to the <strong>@_PPQM.WebsiteName</strong> website and application</li>
+                    }
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <li><strong>Data: -</strong>means personal data we collect from users or visitors of our website.</li>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <li><strong>Data: -</strong>means personal data we collect from users or visitors of our application.</li>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <li><strong>Data: -</strong>means personal data we collect from users or visitors of our website and application.</li>
+                    }
+                </ul>
+            </div>
+            @if (_PPQM.CollectPersonalInformation)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">What type of data do we collect?</h5>
+                    @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">We collect information to improve our service for users. To use this website you need to provide us certain information This information is necessary to use our service without this information you will not able to use our service. Data we collect may include but are not limited to</p>
+                    }
+                    @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">We collect information to improve our service for users. To use this app you need to provide us certain information This information is necessary to use our service without this information you will not able to use our service. Data we collect may include but are not limited to</p>
+                    }
+                    @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                    {
+                        <p style="text-align: justify; text-align-last: left;">We collect information to improve our service for users. To use this website and app you need to provide us certain information This information is necessary to use our service without this information you will not able to use our service. Data we collect may include but are not limited to</p>
+                    }
+                    <ul>
+                        @if (_PPQM.TypesOfDataCollected.Name)
+                        {
+                            <li>Name</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Address)
+                        {
+                            <li>Address</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Email)
+                        {
+                            <li>E-mail</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.PhoneNumber)
+                        {
+                            <li>Phone number</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Age)
+                        {
+                            <li>Age</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Gender)
+                        {
+                            <li>Gender</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Payment)
+                        {
+                            <li>Payment processing information</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Location)
+                        {
+                            <li>Location</li>
+                        }
+                        @if (_PPQM.TypesOfDataCollected.Others)
+                        {
+                            foreach (var item in _otherDatas)
+                            {
+                                <li>@item</li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">What type of data do we collect?</h5>
+                    <p style="text-align: justify; text-align-last: left;">We don’t collect personal data which is not necessary to run our service. We try to minimize the collection of data. We don’t collect personally identifiable information. If we change our policies or we start collecting data we will notify you before we do. </p>
+                </div>
+            }
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">Usage Data</h5>
+                <p style="text-align: justify; text-align-last: left;">Usage Data is collected automatically when using the Service. Usage Data may include information such as your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, and the time spent on those pages.</p>
+                @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                {
+                    <p style="text-align: justify; text-align-last: left;">When you use our website, we collect certain technical information automatically may including but not limited to, the type of mobile device you use, the IP address of your mobile device, your mobile operating system, and the type of mobile Internet browser you use. Device locations, including specific geographic locations, through GPS, Bluetooth, or Wi-Fi signals.</p>
+                }
+                @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                {
+                    <p style="text-align: justify; text-align-last: left;">When you download and use our app, we collect certain technical information automatically may including but not limited to, the type of mobile device you use, the IP address of your mobile device, your mobile operating system, and the type of mobile Internet browser you use. Device locations, including specific geographic locations, through GPS, Bluetooth, or Wi-Fi signals.</p>
+                }
+                @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                {
+                    <p style="text-align: justify; text-align-last: left;">When you download and use our app or website, we collect certain technical information automatically may including but not limited to, the type of mobile device you use, the IP address of your mobile device, your mobile operating system, and the type of mobile Internet browser you use. Device locations, including specific geographic locations, through GPS, Bluetooth, or Wi-Fi signals.</p>
+                }
+            </div>
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">How do we use your data?</h5>
+                <p style="text-align: justify; text-align-last: left;"> We use collected data for the various purpose may include but not limited to</p>
+                <ul>
+                    @if (_PPQM.PurposeOfCollection.Run)
+                    {
+                        if (_PPQM.Platform == "Website")
+                        {
+                            <li>To run and operate the site.</li>
+                        }
+                        if (_PPQM.Platform == "Application")
+                        {
+                            <li>To run and operate the app.</li>
+                        }
+                        if (_PPQM.Platform == "Both")
+                        {
+                            <li>To run and operate the app and site</li>
+                        }
+                    }
+                    @if (_PPQM.PurposeOfCollection.Provide)
+                    {
+                        <li>To provide products and services you  have requested.</li>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Improve)
+                    {
+                        <li>To improve and personalize our service.</li>
+
+                        <ul>
+                            @if (_PPQM.Platform == "Website" || _PPQM.Platform == "ድህረገፅ")
+                            {
+                                <li>We use collected data to personalize our service to provide a better experience like showing relevant ads on our website.</li>
+                            }
+                            @if (_PPQM.Platform == "Application" || _PPQM.Platform == "መተግበሪያ")
+                            {
+                                <li>We use collected data to personalize our service to provide a better experience like showing relevant ads on our app.</li>
+                            }
+                            @if (_PPQM.Platform == "Both" || _PPQM.Platform == "ሁለቱም")
+                            {
+                                <li>We use collected data to personalize our service to provide a better experience like showing relevant ads on our website and app.</li>
+                            }
+                        </ul>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Communicate)
+                    {
+                        <li>To communicate</li>
+                        <ul>
+                            <li>
+                                We use collected data to respond to your comment, feedback, or question. And
+                                to send you newsletters and marketing communication.
+                            </li>
+                        </ul>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Payment)
+                    {
+                        <li>To process payments</li>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Research)
+                    {
+                        <li>To perform market research</li>
+                    }
+                    @if (_PPQM.PurposeOfCollection.Security)
+                    {
+                        <li>To ensure security</li>
+                    }
+                    @if (_otherPurposes != null)
+                    {
+                        foreach (var item in _otherPurposes)
+                        {
+                            <li>@item</li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">
+                    What are your rights?
+                </h5>
+                <ul>
+                    <li>
+                        The right to be informed: you have the right to know how we collect and use your data.
+                    </li>
+                    <li>The right to access: you have the right to review or receive a copy of the personal information that we keep about you. This may charge you for our cost related to your request. </li>
+                    <li>The right to rectification: if your data are recorded as incorrect or incomplete, you have the right to ask to amend your information.</li>
+                    <li>
+                        The right to erasure (forgotten): you have the right, to request to erase your data that is collected by us.
+                    </li>
+                    <li>The right to object: you have the right to object to processing your data at any time you want.</li>
+                    <li>The right to restrict processing.</li>
+                    <li>The right to data portability: you have the right to transfer your data from us to another controller and you have the right to receive your data in a structured, commonly used, and machine-readable format.</li>
+                </ul>
+                <p style="text-align: justify; text-align-last: left;">
+                    If you would like to exercise those rights, you may do by contacting us.  After the request, we may request additional information from you to verify your identity.
+                </p>
+            </div>
+            @if (_PPQM.UseCookies)
+            {
+
+
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">Cookies and other tracking technology</h5>
+                    <p style="font-size: 20px;">What is a cookie?</p>
+                    <p style="text-align: justify; text-align-last: left;">
+                        A cookie is a small amount of data that is sent to your browser and stored on your computer or mobile device’s hard drive. The web
+                        servers will be notified of your visit to the Platform and, in turn, the server may have knowledge of your visit and the pattern of your usage.
+                    </p>
+                    @if (_cookieTypes != null)
+                    {
+                        <div class="ml-2">
+                            <h5 style="font-size: 20px;">Here is a list of cookies that we used</h5>
+                            <ul>
+                                @if (_cookieTypes.Any(c => c == "First Party Cookie" || c == "የመጀመሪያ ወገን ኩኪዎች"))
+                                {
+                                    <li><strong>First party cookies: -</strong> cookies set by us (this website).</li>
+                                }
+                                @if (_cookieTypes.Any(c => c == "Third Party Cookie" || c == "የሶስተኛ ወገን ኩኪዎች"))
+                                {
+                                    <li><strong>Third party cookies: -</strong> cookies set by a third- party or other than us. This cookie is used for cross-site tracking, retargeting and ad-serving.</li>
+                                }
+                                @if (_cookieTypes.Any(c => c == "Temporary Cookie" || c == "ጊዜያዊ ኩኪዎች"))
+                                {
+                                    <li>
+                                        <strong>Temporary cookies (also Session cookies):-</strong> only retain information about your activities for as long as you are on the website. Once you close the browser or shut down the device the cookie is deleted. These are commonly used on shopping websites or e-commerce websites.
+                                    </li>
+                                }
+                                @if (_cookieTypes.Any(c => c == "Permanent Cookie" || c == "ቋሚ ኩኪዎች"))
+                                {
+                                    <li><strong>Permanent cookies (also persistent cookies):-</strong> remain in operation even after closing the browser or shutdown the device which is activated each time you visit the platform. They can remember login details and passwords so you don't need to re-enter them every time you use a site.</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                    <p style="text-align: justify; text-align-last: left;"> We also use other tracking technology such as web beacons. Beacons are Small graphic images (also known as pixel tags or clear GIFs) that recognize our users’ activity, such as if and how often a user has visited our website.</p>
+                    <p style="text-align: justify; text-align-last: left;">
+                        We may use other similar technology to provide you with a better, faster, and safer experience and for advertising purposes.
+                    </p>
+                </div>
+            }
+            @if (_PPQM.ShareData)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">Disclosure and Sharing of data</h5>
+                    <p style="text-align: justify; text-align-last: left;"> We may share your data with other bodies, companies, or persons. May include but are not limited to</p>
+                    <ul>
+                        @if (_thirdParties.Any(t => t == "Suppliers" || t == "አቅራቢዎች"))
+                        {
+                            <li>Suppliers:</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "Business Partners" || t == "የንግድ አጋሮች"))
+                        {
+                            <li>Business partners :</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "Services Providers" || t == "አገልግሎት አቅራቢዎች"))
+                        {
+                            <li>Service providers( IT and infrastructure support services advertising, marketing, and payment processing services).</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "Comply With The Law" || t == "ህጉን ያክብሩ"))
+                        {
+                            <li>Comply with laws</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "To Investigate Security" || t == "ደህንነትን ለመመርመር"))
+                        {
+                            <li>To investigate security</li>
+                        }
+                        @if (_thirdParties.Any(t => t == "In Case Of Merger Purchase Or Sale Of Business" || t == "የንግድ ግዢ ወይም ሽያጭን በተመለከተ"))
+                        {
+                            <li>In case of merger, purchase, or sale of part or all of our business.</li>
+                        }
+                    </ul>
+                    <p style="text-align: justify; text-align-last: left;">When we share or disclose your data with third parties we observe the legal requirements and, in particular, conclude appropriate agreements with the recipients of your data.</p>
+                </div>
+            }
+            else
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">Disclosing and sharing of data?</h5>
+                    <p style="text-align: justify; text-align-last: left;">We will ensure adequate protection for your data. We don’t share any of your data with anyone.</p>
+                </div>
+            }
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">How long do we keep your data?</h5>
+                <p style="text-align: justify; text-align-last: left;">We will keep your data only for as long as your account is active or when it is necessary to comply with our obligation or for legally permissible reasons for storing your data like taxes and so on in this case processing of your data will be limited to these purposes. We keep contact information (such as mailing list information) until you unsubscribe or request that we delete that information from our live systems. We will delete the data once these reasons have ceased to exist.</p>
+            </div>
+            @if (_PPQM.UseRemarketingForAdvertising)
+            {
+                <div class="mt-2">
+                    <h5>Remarketing ads</h5>
+                    <p style="text-align: justify; text-align-last: left;">We use remarketing ads. Remarketing means showing you our advertisements when you continue to use the internet after you have visited our website. This is done using cookies stored in your browser, which are used by Google to record and evaluate your usage behavior when you visit various websites. In this way, Google can determine your previous visit to our website.</p>
+                </div>
+            }
+
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">Security measurement</h5>
+                <p style="text-align: justify; text-align-last: left;">We take and implement generally accepted standards of technology and operational security to protect your data from unauthorized access, use, disclosure, or loss while in transmission or storage in accordance with legal requirements. It has both online and offline safeguards in place to prevent misuse, destruction and alteration of data.</p>
+            </div>
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">Children’s Privacy</h5>
+                <p style="text-align: justify; text-align-last: left;">Our services do not address anyone under the age of @_PPQM.AudienceAge.Replace(">", ""), and you may not use our services if you are under the age of @_PPQM.AudienceAge.Replace(">", ""). We do not knowingly collect personally identifiable information from children under @_PPQM.AudienceAge.Replace(">", "") years of age. In the case we discover that a child under @_PPQM.AudienceAge.Replace(">", "") has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do the necessary actions.</p>
+            </div>
+            @if (_PPQM.ProvideHyperlinks)
+            {
+                <div class="mt-2">
+                    <h5 style="font-size: 25px;">Links to other websites</h5>
+                    <p style="text-align: justify; text-align-last: left;"> Our website may contain links to other websites that are not owned or controlled by us. Be aware that we have no control and we are not responsible for such other websites or third parties privacy practices. We encourage you to be aware those websites have their privacy policy and term and condition when you leave our website read the privacy policy of each website that may collect personal information.</p>
+                </div>
+            }
+            <div class="mt-2">
+                <h5 style="font-size: 25px;">Changes to this data privacy policy</h5>
+                <p style="text-align: justify; text-align-last: left;"> We may update our privacy policy from time to time in response to changing laws or procedures or business development.</p>
+                <p style="text-align: justify; text-align-last: left;"> If we do revise or update this privacy policy we will notify you before the new privacy policy becomes effective. The Privacy Policy changes are effective when they are posted on this page. Your continued use of this website after any change in this Privacy Policy will constitute your acceptance of such change.</p>
+                <h4 style="font-size: 25px;">
+                    contacting us
+                </h4>
+                <p> If there are any questions regarding this privacy policy you may contact us using the information below.</p>
+                @if (_PPQM.OperatorType == "Company" || _PPQM.OperatorType == "ኩባንያ")
+                {
+                    <p>@_PPQM.BusinessName</p>
+                }
+                else
+                {
+                    <p>@_PPQM.WebsiteName</p>
+
+                }
+                <p> @_PPQM.Address.Subcity, Sub city Woreda @_PPQM.Address.Woreda</p>
+                <p> @_PPQM.Address.Region, @_PPQM.Address.Country</p>
+                <p></p>
+                @if (_PPQM.Contact.PhoneNumber != null)
+                {
+                    <p>Phone Number: <a href="tel:@_PPQM.Contact.PhoneNumber">@_PPQM.Contact.PhoneNumber</a></p>
+                }
+                @if (_PPQM.Contact.Email != null)
+                {
+                    <p>Email: <a href="@_PPQM.Contact.Email">@_PPQM.Contact.Email</a></p>
+                }
+            </div>
+            <div class="d-flex justify-content-end">
+                <p style="text-align: justify; text-align-last: left;"> Effecive Date @_PPQM.EffectiveDate.ToShortDateString()</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 row">
+
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Class="w-100" Click="OnChangeAnswerCliked" Icon="arrow_back_ios" Text="@_localizer["Back"]" />
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <RadzenButton Click="OnDownloadClicked" Class="w-100" Icon="download" Text="@_localizer["Download"]" />
+        </div>
+
+    </div>
+</div>
